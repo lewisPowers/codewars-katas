@@ -8,6 +8,21 @@
 </head>
 <body>
   <script>
+
+    // Checks a word for repeating characters, case insensitive;
+    function isIsogram(str){
+      str = str.toLowerCase();
+      let isMultiple = function(char) {
+        if (isMultiple[char]) return isMultiple[char];
+        isMultiple[char] = true;
+        return false;
+      }
+      for (let char of str) {
+        if (isMultiple(char)) return false;
+      }
+      return true;
+    }
+
     function sumDigits(number) {
       let digitsArr = number.toString().split('');
     return digitsArr.reduce((a, c) => {
