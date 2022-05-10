@@ -9,6 +9,81 @@
 <body>
   <script>
 
+    function mix(s1, s2) {
+      let repeaters = [];
+      let result = [];
+      let iterate = function(str) {
+        let name = str == s1 ? '1' : '2';
+        let letters = {};
+        let isLowerCase = function(char) {
+          let regex = /[a-z]/g;
+          return regex.test(char);
+        }
+        let counter = function(char) {
+          letters[char] ? letters[char]++ : letters[char] = 1;
+        }
+        for (let char of str) {
+          if (isLowerCase(char)) {
+            counter(char);
+          }
+        }
+        for (let letter in letters) {
+          if (letters[letter] < 2) delete letters[letter]
+        }
+        repeaters.push({
+          [name]: letters
+        })
+        return {
+          [name]: letters
+        }
+      }
+
+      let buildRepeatStr = function(char, count) {
+        let res = '';
+        while (count > 0) {
+          res += char
+          count--;
+        }
+        return res;
+      }
+
+      let collections = Object.assign(iterate(s1), iterate(s2));
+
+      for (let letter in collections[1]) {
+        if (collections[1][letter] && collections[2][letter]) {
+          if (collections[1][letter] === collections[2][letter]) {
+            result.push(`=:${buildRepeatStr(letter, collections[1][letter])}`)
+          } else if (collections[1][letter] > collections[2][letter]) {
+            result.push(`1:${buildRepeatStr(letter, collections[1][letter])}`)
+          } else {
+            result.push(`2:${buildRepeatStr(letter, collections[2][letter])}`)
+          }
+          delete collections[2][letter]
+          delete collections[1][letter]
+        } else {
+          result.push(`1:${buildRepeatStr(letter, collections[1][letter])}`)
+          delete collections[1][letter]
+        }
+      }
+
+      for (let letter in collections[2]) {
+        result.push(`2:${buildRepeatStr(letter, collections[2][letter])}`)
+      }
+
+      return result.sort((a, b)=>{
+        if (a.length > b.length) return -1;
+        if (a.length < b.length) return 1;
+        if (a.length === b.length) {
+          if (a.codePointAt([0]) === b.codePointAt([0])) {
+            if (a.codePointAt([2]) < b.codePointAt([2])) return -1
+            if (a.codePointAt([2]) > b.codePointAt([2])) return 1
+          }
+          if (a.codePointAt([0]) < b.codePointAt([0])) return -1
+          if (a.codePointAt([0]) > b.codePointAt([0])) return 1
+        }
+      }).join('/');
+    }
+
     // Checks a word for repeating characters, case insensitive;
     function isIsogram(str){
       str = str.toLowerCase();
