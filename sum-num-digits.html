@@ -8,7 +8,14 @@
 </head>
 <body>
   <script>
-
+    function sumDigits(number) {
+      let digitsArr = number.toString().split('');
+    return digitsArr.reduce((a, c) => {
+      c = Number(c)
+      if (!isNaN(c)) return a + c;
+      return a;
+    }, 0)
+  }
   </script>
 </body>
 </html>
