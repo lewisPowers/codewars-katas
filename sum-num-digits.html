@@ -9,7 +9,20 @@
 <body>
   <script>
 
+    // Remove the Minimum
+    function removeSmallest(numbers) {
+      if (numbers.length <= 1) return [];
+      let copy = numbers.slice();
+      let lowest = Infinity;
+      numbers.forEach((num) => {
+        if (num < lowest) lowest = num;
+      })
+      copy.splice(copy.indexOf(lowest), 1);
+      return copy;
+    }
+
 // Are they the "same"?
+// "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
     function comp(array1, array2){
       if (!Array.isArray(array1) || !Array.isArray(array1)) return false;
       if (array1 == null || array2 == null) return false;
