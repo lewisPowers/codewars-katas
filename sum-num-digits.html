@@ -9,6 +9,24 @@
 <body>
   <script>
 
+// Are they the "same"?
+    function comp(array1, array2){
+      if (!Array.isArray(array1) || !Array.isArray(array1)) return false;
+      if (array1 == null || array2 == null) return false;
+      let slicedArr1 = array1.slice();
+      let slicedArr2 = array2.slice();
+      while (slicedArr1.length && slicedArr2.length) {
+        let squared = slicedArr1[0] * slicedArr1[0];
+        if (slicedArr2.includes(squared)) {
+          slicedArr1.shift();
+          slicedArr2.splice(slicedArr2.indexOf(squared), 1)
+        } else {
+          return false;
+        }
+      }
+      return slicedArr1.length === 0 && slicedArr2.length === 0 ? true : false;
+    }
+
     function finalGrade (exam, projects) {
       if (exam > 90 || projects > 10) return 100;
       if (exam > 75 && projects >= 5) return 90;
