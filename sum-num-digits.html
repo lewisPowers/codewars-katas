@@ -9,6 +9,13 @@
 <body>
   <script>
 
+    function factorial(n) {
+      // random exception
+      if (n < 0 || n > 12) throw new RangeError();
+      if (n <= 1) return 1;
+      return n * factorial(n - 1);
+    }
+
     function revrot(str, sz) {
       if (sz <= 0 || str == '') return '';
       let rotate = function(substr) {
