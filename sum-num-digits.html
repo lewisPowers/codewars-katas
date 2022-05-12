@@ -9,6 +9,26 @@
 <body>
   <script>
 
+    String.prototype.isUpperCase = function() {
+      for (let char of this) {
+        let code = char.charCodeAt(0)
+        if ( code >= 97 && code <= 122 ) return false;
+      }
+      return true;
+    }
+
+    function findMultiples(integer, limit) {
+      //EXAMPLE,
+      // if the parameters passed are (2, 6),
+      // the function should return [2, 4, 6] as 2, 4,
+      // and 6 are the multiples of 2 up to 6.
+      let arr = [];
+      for (let i = integer; i <= limit; i = i + integer) {
+        arr.push(i);
+      }
+      return arr;
+    }
+
     function hexToDec(hexString){
       // EXAMPLE
     //   assert.strictEqual(hexToDec("1"), 1);
