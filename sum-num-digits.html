@@ -9,6 +9,12 @@
 <body>
   <script>
 
+
+
+    function isPalindrome(x) {
+      return x.toLowerCase() === x.toLowerCase().split('').reverse().join('')
+    }
+
     function factorial(n) {
       // random exception
       if (n < 0 || n > 12) throw new RangeError();
