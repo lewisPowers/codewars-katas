@@ -8,14 +8,12 @@
 </head>
 <body>
   <script>
-    function sumDigits(number) {
-      let digitsArr = number.toString().split('');
-    return digitsArr.reduce((a, c) => {
-      c = Number(c)
-      if (!isNaN(c)) return a + c;
-      return a;
-    }, 0)
-  }
+    function factorial(n) {
+      // random exception
+      if (n < 0 || n > 12) throw new RangeError();
+      if (n <= 1) return 1;
+      return n * factorial(n - 1);
+    }
   </script>
 </body>
 </html>

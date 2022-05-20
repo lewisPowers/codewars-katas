@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function findMultiples(integer, limit) {
+      //EXAMPLE,
+      // if the parameters passed are (2, 6),
+      // the function should return [2, 4, 6] as 2, 4,
+      // and 6 are the multiples of 2 up to 6.
+      let arr = [];
+      for (let i = integer; i <= limit; i = i + integer) {
+        arr.push(i);
+      }
+      return arr;
+    }
+  </script>
+</body>
+</html>

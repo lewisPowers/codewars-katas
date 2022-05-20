@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function revrot(str, sz) {
+      if (sz <= 0 || str == '') return '';
+      let rotate = function(substr) {
+        return substr.slice(1).concat(substr[[0]]);
+      }
+      let reverse = function(substr) {
+        return substr.split('').reverse().join('')
+      }
+      let chunks = function() {
+        let arr = [];
+        let copy = str.slice()
+        while (copy.length >= sz) {
+          let substr = copy.slice(0, sz);
+          arr.push(substr);
+          copy = copy.slice(sz)
+        }
+        return arr;
+      }
+      let isSumOfDigitsCubedDivibleByTwo = function(substr)  {
+        let sum = substr.split('').map(char => {
+          return Math.pow(char, 3);
+        }).reduce((a, c) => {
+          return a + c;
+        }, 0);
+        return sum % 2 === 0 ? true : false;
+      }
+
+      let chunkArr = chunks();
+      return chunkArr.map(substr => {
+        if (isSumOfDigitsCubedDivibleByTwo(substr)) return reverse(substr);
+        return rotate(substr);
+      }).join('');
+    }
+  </script>
+</body>
+</html>
