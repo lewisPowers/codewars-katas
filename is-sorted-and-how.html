@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function isSortedAndHow(array) {
+      let copy = array.slice()
+      let sorted = function(isAsc) {
+        return copy.sort((a, b) => {
+          if (isAsc) return a - b;
+          return b - a;
+        })
+      }
+      let isSame = function(sortedArr) {
+        for (let i = 0; i < array.length; i++) if (array[i] !== sortedArr[i]) return false;
+        return true;
+      }
+      for (let i = 0; i < array.length; i++) {
+        if (isSame(sorted(true))) return 'yes, ascending';
+        if (isSame(sorted())) return 'yes, descending';
+        return 'no';
+      }
+    }
+  </script>
+</body>
+</html>
