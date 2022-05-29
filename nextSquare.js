@@ -1,6 +1,6 @@
 function findNextSquare(sq) {
-  if ( Math.sqrt(sq) !== Math.trunc(Math.sqrt(sq)) ) return -1;
-  return Math.pow(Math.sqrt(sq) + 1, 2)
+  if ( Math.sqrt(sq) !== Math.trunc(Math.sqrt(sq) ) ) return -1;
+  return Math.pow(Math.sqrt(sq) + 1, 2);
 }
 
 
