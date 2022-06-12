@@ -1,4 +1,5 @@
 function sumOfMinimums(arr) {
+  // try Math.min(...nestArr) in next iteration
   let minimiumValues = [];
   arr.forEach(nestedArr => {
     minimiumValues.push(findSmallestsVal(nestedArr))
