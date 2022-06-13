@@ -7,4 +7,4 @@ function solve(str) {
   }
   return upperCaseCount > lowerCaseCount ? str.toUpperCase() : str.toLowersCase()
 }
-console.log(String.fromCharCode(65))
+// console.log(String.fromCharCode(65))
