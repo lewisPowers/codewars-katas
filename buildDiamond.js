@@ -19,5 +19,5 @@ function diamond(n){
   }).join('');
 }
 
-console.log(diamond(5))
-console.log(diamond(125))
+// console.log(diamond(5))
+// console.log(diamond(125))
