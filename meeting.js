@@ -1,5 +1,5 @@
 function meeting(s) {
-return s.toUpperCase().split(';').map(name => {
+  return s.toUpperCase().split(';').map(name => {
     let [firstName, lastName] = name.split(':')
     return `(${lastName}, ${firstName})`
   }).sort().join('')
