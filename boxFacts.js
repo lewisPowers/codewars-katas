@@ -1,3 +1,4 @@
+import frontend from '/frontendModule.js';
 // Write a function that returns the total surface area and volume of a box as an array: [area, volume]
 // area of two sides is w * h
 // area of two sides is d * h
@@ -9,3 +10,5 @@ function getSize(w, h, d) {
   let volume = w * h * d;
   return [ area, volume ]
 }
+getSize.newName = 'Area & Volume of Box'
+frontend(getSize, 10, 20, 5)

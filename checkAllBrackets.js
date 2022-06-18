@@ -1,3 +1,4 @@
+import frontend from '/frontendModule.js';
 //  check string for correct formatting of opening and closing parentheses, brackets, carets, etc.
 function isValid(str) {
   let brackets = {
@@ -24,3 +25,5 @@ function isValid(str) {
   })
   return isValid;
 }
+isValid.newName = 'Opening/Closing Bracket Check';
+frontend(isValid, '{[]{(<)}>}');
