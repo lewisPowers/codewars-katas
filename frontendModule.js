@@ -19,7 +19,7 @@ export default function(fn, args) {
   code.textContent = `${fn}`;
   code.style.backgroundColor = 'lightgray'
   content.textContent = `Input: ${allArgsArr}`;
-  content.style.maxWidth = 'min-content';
+  // content.style.maxWidth = 'min-content';
   answer.textContent = `Output: ${call}`
   box.append(heading, code, content, answer)
   document.body.append(box);
