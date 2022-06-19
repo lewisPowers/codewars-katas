@@ -3,13 +3,28 @@ export default function formatCode(fnString) {
   let pElement = createElement('p');
   let line = '';
   let leftMargin = 0;
-  let triggers = [';', '{', '}'];
-  for (let i in fnString) {
-    console.log(fnString[Number(i) + 1] === ' ')
-    console.log(fnString.charCodeAt(Number(i) + 1) === 32)
+  let triggers = [';', '{', '}', '`'];
+  for (let i = 0; i < fnString.length; i++) {
+    let char = fnString[i];
     if (triggers.includes(fnString[i])) {
-      pElement = newLine(fnString[i], line);
-      line = '';
+      if (fnString[i] === '`') {
+        if (formatCode['`'] === undefined) {
+          formatCode['`'] = 1;
+        } else {
+          formatCode['`']++;
+        }
+        line += fnString[i];
+      } else if (!formatCode['`'] || formatCode['`'] % 2 === 0) {
+        if ( fnString[i] === '}' && (fnString[i + 1] === ')' ||
+        fnString[i + 1] === ';' || fnString[i + 1] === "'") ) {
+          line += fnString[i];
+        } else {
+          pElement = newLine(fnString[i], line);
+          line = '';
+        }
+      } else {
+        line += fnString[i];
+      }
     } else {
       line += fnString[i];
     }
