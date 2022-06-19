@@ -11,7 +11,7 @@ function isValidNumber(string) {
     (index === 5 && string[index] !== ' ') ||
     (index === 9 && string[index] !== '-') ) return false;
     if (index !== 0 && index !== 4 && index !== 5 && index !== 9) {
-      if (isNaN(Number(string[index])))  return false;
+      if (isNaN(Number(string[index]))) return false;
     }
   }
   return true;

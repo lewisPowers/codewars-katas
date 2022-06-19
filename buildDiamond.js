@@ -16,7 +16,7 @@ function diamond(n){
     midLineStr = starArr.join('');
     diamondBuilderArray.push(midLineStr);
     diamondBuilderArray.unshift(midLineStr)
-  } while (midLineStr.indexOf('*') !== midLineStr.lastIndexOf('*'))
+  } while (midLineStr.indexOf('*') !== midLineStr.lastIndexOf('*'));
   return diamondBuilderArray.map(str => {
     return str = `${str}\n`;
   }).join('');
