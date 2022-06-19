@@ -9,17 +9,13 @@ export default function(fn, args) {
   box.style.margin = '20px';
   box.style.padding = '20px';
   box.style.border = '1px solid gray';
-
   let heading = document.createElement('h2');
   let content = document.createElement('h4');
-  // let code = document.createElement('code');
   let code = formatCode(fn.toString())
   let answer = document.createElement('h3');
   heading.textContent = `Name: ${fn.newName || fn.name}`;
-  // code.textContent = `${fn}`;
-  // code.style.backgroundColor = 'lightgray'
   content.textContent = `Input: ${allArgsArr}`;
-  answer.textContent = `Output: ${call}`
-  box.append(heading, code, content, answer)
+  answer.textContent = `Output: ${call}`;
+  box.append(heading, code, content, answer);
   document.body.append(box);
 }
