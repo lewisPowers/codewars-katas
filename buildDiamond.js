@@ -1,5 +1,4 @@
 import frontend from '/frontendModule.js';
-// import formatCode from '/formatCode.js';
 
 function diamond(n){
   if (n < 1 || n % 2 === 0) return null;
@@ -24,6 +23,3 @@ function diamond(n){
 
 diamond.newName = 'buildDiamond'
 frontend(diamond, 5)
-// formatCode(diamond.toString())
-// console.log(diamond(5))
-// console.log(diamond(125))
