@@ -1,7 +1,8 @@
 import frontend from '/frontendModule.js';
 
+// '(123) 456-7890' ==> is valid format
+
 function isValidNumber(string) {
-  // '(123) 456-7890'
   if (string.length !== 14) return false;
   for (let index in string) {
     index = Number(index);
