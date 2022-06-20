@@ -10,5 +10,6 @@ function getSize(w, h, d) {
   let volume = w * h * d;
   return [ area, volume ]
 }
+window.getSize = getSize;
 getSize.newName = 'Area & Volume of Box'
 frontend(getSize, 10, 20, 5)
