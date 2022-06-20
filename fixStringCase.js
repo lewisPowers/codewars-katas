@@ -9,5 +9,6 @@ function solve(str) {
   }
   return upperCaseCount > lowerCaseCount ? str.toUpperCase() : str.toLowerCase();
 }
+window.solve = solve;
 solve.newName = 'Fix String Case';
 frontend(solve, 'CoDe');
