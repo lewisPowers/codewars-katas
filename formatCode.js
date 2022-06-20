@@ -1,9 +1,10 @@
 export default function formatCode(fnString) {
+  fnString = removeExcessWhitespace(fnString);
   let mainContainer = createElement('div');
   let pElement = createElement('p');
   let line = '';
   let leftMargin = 0;
-  let triggers = [';', '{', '}', '`', ','];
+  let triggers = [';', '{', '}', '`', ',', '|'];
   for (let i = 0; i < fnString.length; i++) {
     let char = fnString[i];
     if (triggers.includes(fnString[i])) {
@@ -16,12 +17,19 @@ export default function formatCode(fnString) {
         line += fnString[i];
       } else if (!formatCode['`'] || formatCode['`'] % 2 === 0) {
         if ( fnString[i] === '}' && (fnString[i + 1] === ')' ||
-        fnString[i + 1] === ';' || fnString[i + 1] === "'") ||
-        (fnString[i] === ';' && fnString[i + 1] === "'") ||
-        (fnString[i] === ',' && fnString[i - 1] !== "]") ||
-        (fnString[i] === '{' && fnString[i + 1] === "'")) {
+          fnString[i + 1] === ';' || fnString[i + 1] === "'") ||
+          (fnString[i] === ';' && fnString[i + 1] === "'") || // for ; as string
+          (fnString[i] === ';' && fnString[i + 2] === "i") || // in for loops
+          (fnString[i] === ',' && fnString[i - 1] !== "]") || // in objects
+          (fnString[i] === '|' && fnString[i + 1] === "|") ||
+          (fnString[i] === '{' && fnString[i + 1] === "'")) { // for '{' as string
+          if ( (fnString[i] === '}' && fnString[i + 1] === ')') ||
+            (fnString[i] === '}' && fnString[i - 1] === ' ' || fnString[i - 1] === '}') ) {
+            leftMargin -= 11;
+            pElement.style.marginLeft = `${parseNum(pElement.style.marginLeft) - 11}px`
+          }
           line += fnString[i];
-          if ( fnString[i] === '}' && fnString[i + 1] === ')') leftMargin -= 11
+          // if ( fnString[i] === '}' && fnString[i + 1] === ')') leftMargin -= 11
         } else {
 
           pElement = newLine(fnString[i], line, i);
@@ -38,12 +46,12 @@ export default function formatCode(fnString) {
 
   function newLine(char, substr, charPosition, margin) {
     let newPElement;
-    if (char === ';' || char === ',') {
+    if (char === ';' || char === ',' || char === '|') {
       substr += char;
       pElement.textContent = substr;
       mainContainer.append(pElement);
-      // if (char === ';' && fnString.slice(charPosition, charPosition + 5).includes('}')) {
-      //   leftMargin -= 11;
+      // if (char === '|') {
+      //   leftMargin += 11;
       // }
       newPElement = createElement('p', leftMargin)
     } else if (char === '{') {
@@ -88,3 +96,22 @@ function createElement(tag, leftMargin) {
   return $el;
 }
 
+function parseNum(str) {
+  // '22px'
+  let arr = str.split('')
+  while (isNaN(arr[arr.length - 1])) {
+      arr.length--;
+  }
+  return Number(arr.join(''));
+}
+
+function removeExcessWhitespace(str) {
+  let noSpacesStr = '';
+  for (let i in str) {
+    if (
+      str[i] !== ' ' ||
+      (str[i] === ' ' && noSpacesStr[noSpacesStr.length - 1] !== ' ')
+    ) noSpacesStr += str[i];
+  }
+  return noSpacesStr;
+}
