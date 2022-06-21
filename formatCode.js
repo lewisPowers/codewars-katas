@@ -2,6 +2,7 @@ export default function formatCode(fnString) {
   fnString = removeExcessWhitespace(fnString);
   let mainContainer = createElement('div');
   let pElement = createElement('p');
+  pElement.style.padding = '0 4px'
   let line = '';
   let leftMargin = 0;
   let triggers = [';', '{', '}', '`', ',', '|' ];
@@ -43,9 +44,9 @@ export default function formatCode(fnString) {
 
   return mainContainer;
 
-  function newLine(char, substr, charPosition, margin) {
+  function newLine(char, substr) {
     let newPElement;
-    if (char === ';' || char === ',' || ( char === '|') ) {
+    if (char === ';' || char === ',' || char === '|' ) {
       substr += char;
       pElement.textContent = substr;
       mainContainer.append(pElement);
@@ -61,20 +62,13 @@ export default function formatCode(fnString) {
         pElement.textContent = substr;
         mainContainer.append(pElement);
       }
-      // if (fnString.slice(charPosition - 3, charPosition - 1).includes('}')) {
-      //   console.log('FOUND A } NEARBY')
-      //   leftMargin -= 11;
-      // }
-      // let slice = fnString.slice(charPosition - 6, charPosition)
-      // console.log(char, slice)
-      // if (slice.includes('}')) leftMargin -= 11;
-      // if (fnString.includes('diamond') && fnString[charPosition + 1] === ')') leftMargin = leftMargin - 11
       leftMargin -= 11;
       newPElement = createElement('p', leftMargin);
       newPElement.textContent = '}';
       mainContainer.append(newPElement);
       newPElement = createElement('p', leftMargin)
     }
+    newPElement.style.padding = '0 4px';
     return newPElement;
   }
 }
