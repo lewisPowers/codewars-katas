@@ -2,9 +2,9 @@ import frontend from '/frontendModule.js';
 
 function movie(cardPrice, ticketPrice, percentDiscount) {
   if (typeof cardPrice === 'string') {
-    cardPrice = strToNum(cardPrice);
-    ticketPrice = strToNum(ticketPrice);
-    percentDiscount = strToNum(percentDiscount);
+    cardPrice = Number(cardPrice);
+    ticketPrice = Number(ticketPrice);
+    percentDiscount = Number(percentDiscount);
   }
   let purchases = 0;
   let cardPriceTotal = cardPrice;
@@ -18,9 +18,6 @@ function movie(cardPrice, ticketPrice, percentDiscount) {
   }
   function newTicketPrice(oldPrice) {
     return oldPrice * percentDiscount;
-  }
-  function strToNum(str) {
-    return Number(str);
   }
 };
 movie.newName = 'Compare Price: Movie Tickets vs Movie Card';
