@@ -1,11 +1,6 @@
 import frontend from '/frontendModule.js';
 
 function movie(cardPrice, ticketPrice, percentDiscount) {
-  if (typeof cardPrice === 'string') {
-    cardPrice = Number(cardPrice);
-    ticketPrice = Number(ticketPrice);
-    percentDiscount = Number(percentDiscount);
-  }
   let purchases = 0;
   let cardPriceTotal = cardPrice;
   let currentTicketPrice = ticketPrice;
