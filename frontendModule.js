@@ -16,11 +16,12 @@ export default function(fn, args) {
   let testOutput = createEl('span', ['answer', 'green']);
   let code = formatCode(fn.toString());
 
-  heading.textContent = `Name: ${fn.newName || fn.name}`;
-  exampleInput.textContent = `Input: ${allArgsArr}`;
-  exampleOutput.textContent = `Output: ${call}`;
+  heading.textContent = `${fn.newName || fn.name}`;
+  exampleInput.textContent = `Example Input: ${allArgsArr}`;
+  exampleOutput.textContent = `Example Output: ${call}`;
   testInput.textContent = `Test Input: ${fn.name}(`;
   testOutput.textContent = `Test Output: `;
+
   exampleDiv.append(exampleInput, exampleOutput);
   testDiv.append(testInput);
   testInput.append(testCode(fn, allArgsArr, box.id));
@@ -69,7 +70,7 @@ function createEl(tagOrClass, classesOrXtra) {
       $el.style.backgroundColor = 'rgba(5,255,5,.25)';
       if (tagOrClass === 'span') {
         $el.style.fontWeight = '700';
-        $el.style.paddingTop = 0;
+        $el.style.lineHeight = '2.42em';
       }
     }
   }
