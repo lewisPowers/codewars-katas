@@ -4,22 +4,18 @@ export default function formatCode(fnString) {
   let pElement = createElement('p');
   let line = '';
   let leftMargin = 0;
-  let triggers = [';', '{', '}', '`', ',', '|'];
+  let triggers = [';', '{', '}', '`', ',', '|' ];
   for (let i = 0; i < fnString.length; i++) {
     let char = fnString[i];
     if (triggers.includes(fnString[i])) {
       if (fnString[i] === '`') {
-        if (formatCode['`'] === undefined) {
-          formatCode['`'] = 1;
-        } else {
-          formatCode['`']++;
-        }
+        formatCode['`'] === undefined ? formatCode['`'] = 1 : formatCode['`']++;
         line += fnString[i];
       } else if (!formatCode['`'] || formatCode['`'] % 2 === 0) {
-        if ( fnString[i] === '}' && (fnString[i + 1] === ')' ||
-          fnString[i + 1] === ';' || fnString[i + 1] === "'") ||
+        if ( fnString[i] === '}' && (fnString[i + 1] === ')' ||  // for '})'
+          fnString[i + 1] === ';' || fnString[i + 1] === "'") || // & '};'  & '}''
           (fnString[i] === ';' && fnString[i + 1] === "'") || // for ; as string
-          (fnString[i] === ';' && fnString[i + 2] === "i") || // in for loops
+          (fnString[i] === ';' && fnString[i + 2] === "i") || // in for loop definitions
           (fnString[i] === ',' && fnString[i - 1] !== "]") || // in objects
           (fnString[i] === '|' && fnString[i + 1] === "|") ||
           (fnString[i] === '{' && fnString[i + 1] === "'")) { // for '{' as string
@@ -29,11 +25,13 @@ export default function formatCode(fnString) {
             pElement.style.marginLeft = `${parseNum(pElement.style.marginLeft) - 11}px`
           }
           line += fnString[i];
-          // if ( fnString[i] === '}' && fnString[i + 1] === ')') leftMargin -= 11
         } else {
-
-          pElement = newLine(fnString[i], line, i);
-          line = '';
+          if (fnString[i] === '|' && line.length < 40) {
+            line += fnString[i];
+          } else {
+            pElement = newLine(fnString[i], line, i);
+            line = '';
+          }
         }
       } else {
         line += fnString[i];
@@ -42,18 +40,16 @@ export default function formatCode(fnString) {
       line += fnString[i];
     }
   }
+
   return mainContainer;
 
   function newLine(char, substr, charPosition, margin) {
     let newPElement;
-    if (char === ';' || char === ',' || char === '|') {
+    if (char === ';' || char === ',' || ( char === '|') ) {
       substr += char;
       pElement.textContent = substr;
       mainContainer.append(pElement);
-      // if (char === '|') {
-      //   leftMargin += 11;
-      // }
-      newPElement = createElement('p', leftMargin)
+      newPElement = createElement('p', leftMargin);
     } else if (char === '{') {
       substr += char;
       pElement.textContent = substr;
