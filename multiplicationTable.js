@@ -1,4 +1,6 @@
-multiplicationTable = function(size) {
+import frontend from '/frontendModule.js';
+
+function multiplicationTable(size) {
   let table = []
   let row = 1;
   while (row <= size) {
@@ -14,3 +16,7 @@ multiplicationTable = function(size) {
     return arr;
   }
 }
+
+multiplicationTable.newName = 'Multiplication Table';
+multiplicationTable.inputWidth = 3;
+frontend(multiplicationTable, 5)
