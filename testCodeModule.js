@@ -1,7 +1,7 @@
 export default function(fn, argsArr, targetId) {
   let container = document.createElement('div');
   container.style.display = 'flex';
-  container.style.maxHeight = '1.1rem';
+  container.style.maxHeight = '1.5rem';
   let title = document.createElement('h3');
   title.textContent = fn.newName || fn.name;
   argsArr.forEach( (arg, i) => {
@@ -16,7 +16,7 @@ export default function(fn, argsArr, targetId) {
   submit.type = 'submit';
   submit.style.verticalAlign = 'top';
   submit.id = targetId;
-  submit.value = 'Run Test';
+  submit.value = 'Run Code';
 
   container.append(closing, submit);
 
@@ -24,7 +24,11 @@ export default function(fn, argsArr, targetId) {
     let args = [];
     let moduleClicked = e.target.closest('section');
     Array.from(moduleClicked.getElementsByClassName('argument')).forEach(arg => {
-      args.push(arg.value)
+      if (!isNaN(Number(arg.value))) {
+        args.push(Number(arg.value));
+      } else {
+        args.push(arg.value)
+      }
     });
     let key = fn.toString();
     fn[key] = fn.apply(this, args);
