@@ -11,4 +11,5 @@ function solve(str) {
 }
 window.solve = solve;
 solve.newName = 'Fix String Case';
+solve.inputWidth = 11;
 frontend(solve, 'CoDe');

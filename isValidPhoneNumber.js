@@ -17,4 +17,5 @@ function isValidNumber(string) {
   return true;
 }
 isValidNumber.newName = 'Phone Number Format'
+isValidNumber.inputWidth = 13;
 frontend(isValidNumber, '(123) 456-7890')

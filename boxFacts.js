@@ -11,5 +11,6 @@ function getSize(w, h, d) {
   return [ area, volume ]
 }
 window.getSize = getSize;
-getSize.newName = 'Area & Volume of Box'
+getSize.newName = 'Area & Volume of Box';
+getSize.inputWidth = 3;
 frontend(getSize, 10, 20, 5)

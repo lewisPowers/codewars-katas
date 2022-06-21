@@ -27,5 +27,6 @@ function isValid(str) {
 }
 window.isValid = isValid;
 isValid.newName = 'Opening/Closing Bracket Check';
+isValid.inputWidth = 13;
 frontend(isValid, '{[]{(<)}>}');
 

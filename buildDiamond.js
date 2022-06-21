@@ -22,4 +22,5 @@ function diamond(n){
 }
 
 diamond.newName = 'buildDiamond'
+diamond.inputWidth = 3;
 frontend(diamond, 5)

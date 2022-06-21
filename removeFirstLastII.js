@@ -6,7 +6,8 @@ function array(arr){
   split.pop();
   return split.join(' ') === '' ? null : split.join(' ');
 }
-array.newName = 'removeFirstLast'
+array.newName = 'removeFirstLast';
+array.inputWidth = 10;
 frontend(array, '1,2,3')
 
 // EXAMPLE:
