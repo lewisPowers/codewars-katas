@@ -48,6 +48,7 @@ function getArgArr(arrLike) {
 function createEl(tagOrClass, classesOrXtra) {
   if (tagOrClass === 'box') return buildBox(classesOrXtra);
   let $el = document.createElement(tagOrClass);
+  $el.style.overflow = 'hidden';
   if (classesOrXtra && Array.isArray(classesOrXtra)) {
     classesOrXtra.forEach(className => {
       $el.classList.add(className)
@@ -63,7 +64,8 @@ function createEl(tagOrClass, classesOrXtra) {
       $el.style.borderTopRightRadius = '6px';
       $el.style.padding = '5px 10px';
       $el.style.backgroundColor = 'rgba(5,5,255,.25)';
-      $el.style.height = '100%'
+      $el.style.height = '100%';
+      $el.style.overflow = 'hidden';
     }
     if ($el.className.includes('green')) {
       $el.style.padding = '10px';
