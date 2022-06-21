@@ -21,6 +21,7 @@ function diamond(n){
   }).join('');
 }
 
-diamond.newName = 'buildDiamond'
+diamond.newName = 'Build a Diamond';
 diamond.inputWidth = 3;
-frontend(diamond, 5)
+frontend(diamond, 5);
+console.log(diamond(5));
