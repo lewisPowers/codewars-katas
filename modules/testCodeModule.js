@@ -1,9 +1,9 @@
 export default function(fn, argsArr, targetId) {
   let container = createEl('div', 'container');
   let title = createEl('h4', 'title');
-  let testInput = createElement('h4', 'test-input');
+  let testInput = createEl('h4', 'test-input');
   let opening = createEl('h4', 'opening');
-  let testOutput = createElement('span', ['answer', 'green']);
+  let testOutput = createEl('span', ['answer', 'green']);
   let closing = createEl('h4', 'closing');
   let submit = createEl('input', 'submit', targetId);
 
@@ -19,8 +19,10 @@ export default function(fn, argsArr, targetId) {
   });
 
   container.append(closing, submit);
+  submit.addEventListener('click', onSubmit);
+  return container;
 
-  let onSubmit = function(e) {
+  function onSubmit(e) {
     let args = [];
     let moduleClicked = e.target.closest('section');
     Array.from(moduleClicked.getElementsByClassName('argument')).forEach(arg => {
@@ -36,12 +38,6 @@ export default function(fn, argsArr, targetId) {
     let span = children[children.length - 1];
     span.textContent = `Test Output: ${fn[key]}`;
   }
-
-  submit.addEventListener('click', onSubmit);
-
-  return container;
-
-
 }
 
 function makeCommas(elType) {
@@ -53,6 +49,12 @@ function makeCommas(elType) {
 
 function createEl(tag, type, target) {
   let $el = document.createElement(tag);
+  if (tag === 'h4') $el.style.margin = '0';
+  if (type && Array.isArray(type)) {
+    type.forEach(className => {
+      $el.classList.add(className);
+    })
+  } else if (type) $el.className = type;
   if (type === 'container') {
     $el.style.display = 'flex';
     $el.style.maxHeight = '1.5rem';
@@ -99,55 +101,3 @@ function buildInputEl(fn, arg) {
 }
 
 
-
-function createElement(tagOrClass, classesOrXtra) {
-  if (tagOrClass === 'box') return buildBox(classesOrXtra);
-  let $el = document.createElement(tagOrClass);
-  $el.style.overflow = 'hidden';
-  $el.style.fontFamily = 'Kdam Thmor Pro';
-  if (classesOrXtra && Array.isArray(classesOrXtra)) {
-    classesOrXtra.forEach(className => {
-      $el.classList.add(className)
-    })
-  } else if (classesOrXtra) $el.className = classesOrXtra;
-  if ($el.className === 'test-input') $el.style.display = 'flex';
-  if (tagOrClass === 'h4') {
-    $el.style.margin = '1em 0';
-  }
-  if (tagOrClass === 'div' || $el.className.includes('green') || $el.className.includes('test-input')) {
-    $el.style.margin = '0';
-    $el.style.padding = '0';
-    if ($el.className.includes('gray')) {
-      $el.style.marginTop = '15px';
-      $el.style.borderTopLeftRadius = '6px';
-      $el.style.borderTopRightRadius = '6px';
-      $el.style.padding = '5px 10px';
-      $el.style.backgroundColor = 'rgba(5,5,255,.25)';
-      $el.style.height = '100%';
-      $el.style.overflow = 'hidden';
-    }
-    if ($el.className.includes('green')) {
-      $el.style.padding = '10px';
-      $el.style.backgroundColor = 'rgba(5,255,5,.25)';
-      if (tagOrClass === 'span') {
-        $el.style.fontWeight = '700';
-        $el.style.lineHeight = '2.86em';
-      }
-    }
-  }
-
-  return $el;
-
-  function buildBox(fn) {
-    let box = document.createElement('section');
-    box.id = uuid();
-    box.classList.add(box.id, 'module');
-    box.fn = fn;
-    box.style.maxWidth = '80%';
-    box.style.overflow = 'hidden';
-    box.style.margin = '20px';
-    box.style.padding = '20px';
-    box.style.border = '1px solid gray';
-    return box;
-  }
-}
