@@ -2,7 +2,7 @@ export default function formatCode(fnString) {
   fnString = removeExcessWhitespace(fnString);
   let mainContainer = createElement('div');
   let pElement = createElement('p');
-  pElement.style.padding = '0 4px'
+  // pElement.style.padding = '0 4px'
   let line = '';
   let leftMargin = 0;
   let triggers = [';', '{', '}', '`', ',', '|' ];
@@ -68,7 +68,7 @@ export default function formatCode(fnString) {
       mainContainer.append(newPElement);
       newPElement = createElement('p', leftMargin)
     }
-    newPElement.style.padding = '0 4px';
+    // newPElement.style.padding = '0 4px';
     return newPElement;
   }
 }
