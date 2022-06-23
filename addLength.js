@@ -1,3 +1,5 @@
+import frontend from '/modules/frontendModule.js';
+
 function addLength(str) {
   return str.split(' ').map(word => {
     let len = word.length;
@@ -5,7 +7,9 @@ function addLength(str) {
   })
 }
 
-
+addLength.newName = 'Length of Each Word';
+addLength.inputWidth = 22;
+frontend(addLength, 'word length per each');
 //   What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
 
 // addLength('apple ban') => ["apple 5", "ban 3"]
