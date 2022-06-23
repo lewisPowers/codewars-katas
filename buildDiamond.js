@@ -1,7 +1,8 @@
-import frontend from '/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 
 function diamond(n){
   if (n < 1 || n % 2 === 0) return null;
+  if (n === 1) return '*';
   let midLineStr = '';
   while (n > 0) {
     midLineStr += '*';

@@ -1,4 +1,4 @@
-import frontend from '/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 
 // '(123) 456-7890' ==> is valid format
 

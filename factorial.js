@@ -1,4 +1,4 @@
-import frontend from '/frontendModule.js';
+import frontend from './modules/frontendModule.js';
 
 // ONE LINE ITERATIVE OPTION
 function f(n){
@@ -6,6 +6,7 @@ function f(n){
 };
 
 f.newName = "Factorial of N";
+f.inputWidth = 5;
 frontend(f, 100);
 
 //.  ITERATIVE OPTION A:

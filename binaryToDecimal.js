@@ -1,4 +1,4 @@
-import frontend from '/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 
 function binToDec(bin){
   return Number(`0b${bin}`);

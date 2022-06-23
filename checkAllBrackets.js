@@ -1,4 +1,4 @@
-import frontend from '/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 //  check string for correct formatting of opening and closing parentheses, brackets, carets, etc.
 function isValid(str) {
   let brackets = {

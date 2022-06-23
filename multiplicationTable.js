@@ -1,7 +1,7 @@
-import frontend from '/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 
 function multiplicationTable(size) {
-  let table = []
+  let table = [];
   let row = 1;
   while (row <= size) {
     table.push(buildRow(row))

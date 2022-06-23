@@ -1,4 +1,4 @@
-import frontend from '/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 
 function solve(str) {
   let lowerCaseCount = 0;

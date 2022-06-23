@@ -1,4 +1,4 @@
-import frontend from '/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 // Write a function that returns the total surface area and volume of a box as an array: [area, volume]
 // area of two sides is w * h
 // area of two sides is d * h

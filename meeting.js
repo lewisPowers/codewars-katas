@@ -1,4 +1,4 @@
-import frontend from '/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 
 function meeting(s) {
   return s.toUpperCase().split(';').map(name => {
