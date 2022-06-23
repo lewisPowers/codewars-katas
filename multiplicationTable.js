@@ -13,6 +13,7 @@ function multiplicationTable(size) {
     for (let i = 1; i <= size; i++) {
       arr.push(i * multiple);
     }
+    console.log(arr)
     return arr;
   }
 }
