@@ -3,18 +3,18 @@ export default function(fn, argsArr, targetId) {
   let title = createEl('h4', 'title');
   let testInput = createEl('h4', 'test-input');
   let opening = createEl('h4', 'opening');
-  let testOutput = createEl('span', ['answer', 'green']);
+  // let testOutput = createEl('span', ['answer', 'green']);
   let closing = createEl('h4', 'closing');
   let submit = createEl('input', 'submit', targetId);
 
   title.textContent = fn.name;
   testInput.textContent = `Test Input: `;
-  testOutput.textContent = `Test Output: `;
+  // testOutput.textContent = `Test Output: `;
 
   container.append(testInput, title, opening);
 
   argsArr.forEach( (arg, i) => {
-    container.append(buildInputEl(fn, arg));
+    container.append(buildInputEl(fn, arg, i));
     if ( i !== argsArr.length - 1) container.append(makeCommas('h3'));
   });
 
@@ -25,14 +25,18 @@ export default function(fn, argsArr, targetId) {
   function onSubmit(e) {
     let args = [];
     let moduleClicked = e.target.closest('section');
-    Array.from(moduleClicked.getElementsByClassName('argument')).forEach(arg => {
-      if (!isNaN(Number(arg.value))) {
-        args.push(Number(arg.value));
+    Array.from(moduleClicked.getElementsByClassName('argument'))
+      .forEach(argEl => {
+      if (argEl.value[0] === '[') {
+        args.push(JSON.parse(argEl.value))
+      } else if (!isNaN(Number(argEl.value))) {
+        args.push(Number(argEl.value));
       } else {
-        args.push(arg.value)
+        args.push(argEl.value)
       }
     });
     let key = fn.toString();
+    console.log(args)
     fn[key] = fn.apply(this, args);
     let children = moduleClicked.children;
     let span = children[children.length - 1];
@@ -88,10 +92,14 @@ function createEl(tag, type, target) {
   return $el;
 }
 
-function buildInputEl(fn, arg) {
+function buildInputEl(fn, arg, index) {
   let input = document.createElement('input');
   input.classList.add('argument');
-  input.value = arg;
+  if (Array.isArray(arg)) {
+    input.value = `[${arg}]`;
+  } else {
+    input.value = arg;
+  }
   input.style.width = `${fn.inputWidth}ch`;
   input.style.margin = '0 .15rem';
   input.style.padding = '0 .15rem';
@@ -99,5 +107,4 @@ function buildInputEl(fn, arg) {
   input.style.transform = 'translateY(5%)';
   return input;
 }
-
 
