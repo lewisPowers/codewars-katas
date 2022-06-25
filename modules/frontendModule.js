@@ -2,10 +2,8 @@ import formatCode from '/modules/formatCode.js';
 import testCode from '/modules/testCodeModule.js';
 
 export default function(fn, args) {
-  // console.log('Arguments: ', ...arguments)
   let allArgsArr = getArgArr(arguments);
   let call = fn.apply(this, allArgsArr);
-  // console.log('Arguments Array: ', ...allArgsArr)
 
   let box = createEl('box', fn);
   let heading = createEl('h2');
@@ -40,7 +38,6 @@ function uuid() {
 function getArgArr(arrLike) {
   let allArgsArr = Array.from(arrLike);
   allArgsArr.shift();
-  // console.log(allArgsArr)
   return allArgsArr;
 }
 
@@ -91,7 +88,6 @@ function createEl(tagOrClass, classesOrXtra) {
     box.style.overflow = 'hidden';
     box.style.margin = '20px';
     box.style.padding = '20px';
-    // box.style.border = '1px solid gray';
     box.style.borderRadius = '5px';
     box.style.boxShadow = '2px 4px 15px #999';
     return box;
