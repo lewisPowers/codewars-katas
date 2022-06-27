@@ -4,7 +4,7 @@ function multiplicationTable(size) {
   let table = [];
   let row = 1;
   while (row <= size) {
-    table.push(buildRow(row))
+    table.push(buildRow(row));
     row++;
   }
   return table;
