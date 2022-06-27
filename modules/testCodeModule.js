@@ -3,13 +3,12 @@ export default function(fn, argsArr, targetId) {
   let title = createEl('h4', 'title');
   let testInput = createEl('h4', 'test-input');
   let opening = createEl('h4', 'opening');
-  // let testOutput = createEl('span', ['answer', 'green']);
   let closing = createEl('h4', 'closing');
   let submit = createEl('input', 'submit', targetId);
+  let call = fn.apply(this, argsArr)
 
   title.textContent = fn.name;
   testInput.textContent = `Test Input: `;
-  // testOutput.textContent = `Test Output: `;
 
   container.append(testInput, title, opening);
 
@@ -36,12 +35,31 @@ export default function(fn, argsArr, targetId) {
       }
     });
     let key = fn.toString();
-    console.log(args)
+    // console.log(args)
     fn[key] = fn.apply(this, args);
     let children = moduleClicked.children;
     let span = children[children.length - 1];
-    span.textContent = `Test Output: ${fn[key]}`;
+    span.textContent = `Test Output: ${formatOutputString(fn[key])}`;
+    if (fn.log) {
+      console.log(call)
+    }
   }
+}
+
+function formatOutputString(input) {
+
+  if (Array.isArray(input)) {
+    return input.reduce((string, element, i) => {
+      if (i === input.length - 1) {
+        return string += `${element} ]`
+      } else {
+        return string += `${element}, `
+      }
+    }, '[ ');
+  } else {
+    return input;
+  }
+
 }
 
 function makeCommas(elType) {

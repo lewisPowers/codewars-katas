@@ -20,10 +20,11 @@ function diamond(n){
   let result = diamondBuilderArray.map(str => {
     return str = `${str}\n`;
   }).join('');
-  console.log(result);
+  // console.log(result);
   return result;
 }
 
+diamond.log = true;
 diamond.newName = 'Build a Diamond';
 diamond.inputWidth = 3;
 frontend(diamond, 5);

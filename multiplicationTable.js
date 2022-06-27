@@ -13,11 +13,11 @@ function multiplicationTable(size) {
     for (let i = 1; i <= size; i++) {
       arr.push(i * multiple);
     }
-    console.log(arr)
     return arr;
   }
 }
 
+multiplicationTable.log = true;
 multiplicationTable.newName = 'Multiplication Table';
 multiplicationTable.inputWidth = 3;
 frontend(multiplicationTable, 5)
