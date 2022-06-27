@@ -1,10 +1,10 @@
 import formatCode from '/modules/formatCode.js';
 import testCode from '/modules/testCodeModule.js';
+import infoTab from '/modules/funcInfo.js';
 
 export default function(fn, args) {
   let allArgsArr = getArgArr(arguments);
   let call = fn.apply(this, allArgsArr);
-
   let box = createEl('box', fn);
   let heading = createEl('h2');
   let exampleDiv = createEl('div', 'gray');
@@ -19,10 +19,12 @@ export default function(fn, args) {
   exampleOutput.textContent = `Example Output: ${call}`;
   testOutput.textContent = `Test Output: `;
 
+  infoTab(box, fn.info);
   exampleDiv.append(exampleInput, exampleOutput);
   testDiv.append(testCode(fn, allArgsArr, box.id));
   box.append(heading, code, exampleDiv, testDiv, testOutput);
   document.body.append(box);
+
 }
 
 function uuid() {
@@ -45,7 +47,6 @@ function createEl(tagOrClass, classesOrXtra) {
   if (tagOrClass === 'box') return buildBox(classesOrXtra);
   let $el = document.createElement(tagOrClass);
   $el.style.overflow = 'hidden';
-  $el.style.fontFamily = 'Kdam Thmor Pro';
   if (classesOrXtra && Array.isArray(classesOrXtra)) {
     classesOrXtra.forEach(className => {
       $el.classList.add(className)
