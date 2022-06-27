@@ -14,7 +14,7 @@ export default function formatCode(fnString) {
         line += fnString[i];
       } else if (!formatCode['`'] || formatCode['`'] % 2 === 0) {
         if ( fnString[i] === '}' && (fnString[i + 1] === ')' ||  // for '})'
-          fnString[i + 1] === ';' || fnString[i + 1] === "'") || // & '};'  & '}''
+        fnString[i + 1] === ';' || fnString[i + 1] === "'" || fnString[i + 1] === ",") || // & '};'  & '}'' & "},"
           (fnString[i] === ';' && fnString[i + 1] === "'") || // for ; as string
           (fnString[i] === ';' && fnString[i + 2] === "i") || // in for loop definitions
           (fnString[i] === ',' && fnString[i - 1] !== "]") || // in objects
