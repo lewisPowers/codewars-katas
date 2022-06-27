@@ -10,4 +10,5 @@ function century(year) {
 
 century.inputWidth = 6;
 century.newName = 'Get Century From Year';
+century.info = 'Enter a year into the function and the number returned is the corresponding century.';
 frontend(century, 2000)
