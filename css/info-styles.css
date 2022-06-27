@@ -1,0 +1,30 @@
+.info-tab,
+.info-btn {
+  position: absolute;
+}
+
+.info-btn {
+  height: 10px;
+  width: 10px;
+  top: 40px;
+  right: 20px;
+}
+
+.info-btn::after {
+  content: '?';
+}
+
+.info-tab {
+  opacity: 1;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: white;
+  height: fit-content;
+  top: 0px;
+  right: 0px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
