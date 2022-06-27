@@ -5,7 +5,6 @@ export default function(fn, argsArr, targetId) {
   let opening = createEl('h4', 'opening');
   let closing = createEl('h4', 'closing');
   let submit = createEl('input', 'submit', targetId);
-  let call = fn.apply(this, argsArr)
 
   title.textContent = fn.name;
   testInput.textContent = `Test Input: `;
@@ -41,7 +40,7 @@ export default function(fn, argsArr, targetId) {
     let span = children[children.length - 1];
     span.textContent = `Test Output: ${formatOutputString(fn[key])}`;
     if (fn.log) {
-      console.log(call)
+      console.log(fn[key]);
     }
   }
 }
