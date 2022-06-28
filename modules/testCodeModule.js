@@ -45,7 +45,6 @@ export default function(fn, argsArr, targetId) {
 }
 
 function formatOutputString(input) {
-
   if (Array.isArray(input)) {
     return input.reduce((string, element, i) => {
       if (i === input.length - 1) {
@@ -57,7 +56,6 @@ function formatOutputString(input) {
   } else {
     return input;
   }
-
 }
 
 function makeCommas(elType) {
