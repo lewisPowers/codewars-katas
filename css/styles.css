@@ -9,6 +9,10 @@
   position: relative;
 }
 
+.module.darken {
+  background-color: rgba(115, 115, 115, 0.192);
+}
+
 .submit:hover {
   cursor: pointer;
   background-color: rgba(50, 50, 50, 0.104) !important;
