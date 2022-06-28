@@ -1,18 +1,20 @@
 (function() {
   document.body.addEventListener('click',  function(e) {
-    // console.log(e.target.classList, e.target)
-    // click anywhere outside of info div to hide all info tabs
-
-    if (e.target.classList.length && !e.target.classList.value.includes('info-tab')) {
-      let infoTabs = document.getElementsByClassName('info-tab');
-      Array.from(infoTabs).forEach(el => {
-        // console.log(el)
-        // if (!el.classList.includes('hidden')) {
-        //   el.classList.add('hidden')
-        // }
-      })
+    if (!e.target.classList.contains('info-btn') &&
+      !e.target.classList.contains('info-tab') &&
+      e.target.tagName !== 'P' ) {
+      let infoTabs = Array.from(document.getElementsByClassName('info-tab'));
+      if (infoTabs.every(function(el) {
+        return el.classList.contains('hidden');
+      }) === false ) {
+        infoTabs.forEach(el => {
+          if (!el.classList.contains('hidden')) {
+            let module = el.closest('section');
+            module.classList.remove('darken');
+            el.classList.add('hidden');
+          }
+        })
+      }
     }
   })
 })()
-
-
