@@ -13,13 +13,14 @@ export default function(fn, args) {
   let exampleOutput = createEl('h4', box.id);
   let testOutput = createEl('span', ['answer', 'green']);
   let code = formatCode(fn.toString());
+  let link = fn.link;
 
   heading.textContent = `${fn.newName || fn.name}`;
   exampleInput.textContent = `Example Input: ${allArgsArr}`;
-  exampleOutput.textContent = `Example Output: ${call}`;
+  exampleOutput.textContent = `Example Output: ${formatOutputString(call)}`;
   testOutput.textContent = `Test Output: `;
 
-  infoTab(box, fn.info);
+  infoTab(box, fn.info, link);
   exampleDiv.append(exampleInput, exampleOutput);
   testDiv.append(testCode(fn, allArgsArr, box.id));
   box.append(heading, code, exampleDiv, testDiv, testOutput);
@@ -95,4 +96,16 @@ function createEl(tagOrClass, classesOrXtra) {
   }
 }
 
-
+function formatOutputString(input) {
+  if (Array.isArray(input)) {
+    return input.reduce((string, element, i) => {
+      if (i === input.length - 1) {
+        return string += `${element} ]`
+      } else {
+        return string += `${element}, `
+      }
+    }, '[ ');
+  } else {
+    return input;
+  }
+}
