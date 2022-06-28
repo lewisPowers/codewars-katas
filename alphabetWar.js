@@ -17,6 +17,8 @@ function alphabetWar(fight) {
 window.alphabetWar = alphabetWar;
 alphabetWar.newName = 'Alphabet War';
 alphabetWar.inputWidth = 9;
+alphabetWar.info = 'Accumulate points for each side and return the winner.'
+alphabetWar.link = 'https://www.codewars.com/kata/59377c53e66267c8f6000027';
 frontend(alphabetWar, "zdqmwpbs");
 
 

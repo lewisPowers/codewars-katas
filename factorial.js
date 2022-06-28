@@ -1,13 +1,15 @@
 import frontend from './modules/frontendModule.js';
 
 // ONE LINE ITERATIVE OPTION
-function f(n){
+function factorial(n){
   return n < 1 || isNaN(n) || parseInt(n) !== n ? false : new Array(n).fill(0).map((num, i) => i + 1 ).reduce((a,c) => a + c );
 };
 
-f.newName = "Factorial of N";
-f.inputWidth = 5;
-frontend(f, 100);
+factorial.newName = "Factorial of N";
+factorial.inputWidth = 5;
+factorial.info = 'Factorial addition style. Enter a number and the function will add all integers from 1 to n.';
+factorial.link = '';
+frontend(factorial, 100);
 
 //.  ITERATIVE OPTION A:
 // function f(n){

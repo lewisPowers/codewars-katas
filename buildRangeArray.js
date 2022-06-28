@@ -14,4 +14,6 @@ function between(a, b) {
 
 between.newName = 'Build Array Within Range';
 between.inputWidth = 5;
+between.info = "Input numbers a and b to get a list of all numbers between and including a, b."
+between.link = 'https://www.codewars.com/kata/55ecd718f46fba02e5000029';
 frontend(between, 3, 20);
