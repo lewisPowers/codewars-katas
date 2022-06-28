@@ -16,7 +16,7 @@ export default function(fn, args) {
   let link = fn.link;
 
   heading.textContent = `${fn.newName || fn.name}`;
-  exampleInput.textContent = `Example Input: ${allArgsArr}`;
+  exampleInput.textContent = `Example Input: ${allArgsArr.map(el => ` ${el}`)}`;
   exampleOutput.textContent = `Example Output: ${formatOutputString(call)}`;
   testOutput.textContent = `Test Output: `;
 
