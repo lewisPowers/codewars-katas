@@ -12,7 +12,7 @@ export default function(fn, argsArr, targetId) {
   container.append(testInput, title, opening);
 
   argsArr.forEach( (arg, i) => {
-    container.append(buildInputEl(fn, arg, i));
+    container.append(buildInputEl(fn, arg, i, container));
     if ( i !== argsArr.length - 1) container.append(makeCommas('h3'));
   });
 
@@ -41,6 +41,27 @@ export default function(fn, argsArr, targetId) {
     if (fn.log) {
       console.log(fn[key]);
     }
+  }
+
+  function buildInputEl(fn, arg, index, parent) {
+    let input = document.createElement('input');
+    input.classList.add('argument');
+    if (Array.isArray(arg)) {
+      input.value = `[${arg}]`;
+    } else {
+      input.value = arg;
+    }
+    input.style.width = `${fn.inputWidth}ch`;
+    input.style.margin = '0 .15rem';
+    input.style.padding = '0 .15rem';
+    input.style.textAlign = 'center';
+    input.style.transform = 'translateY(5%)';
+    input.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.target.dispatchEvent(onSubmit(event));
+      }
+    })
+    return input;
   }
 }
 
@@ -106,19 +127,5 @@ function createEl(tag, type, target) {
   return $el;
 }
 
-function buildInputEl(fn, arg, index) {
-  let input = document.createElement('input');
-  input.classList.add('argument');
-  if (Array.isArray(arg)) {
-    input.value = `[${arg}]`;
-  } else {
-    input.value = arg;
-  }
-  input.style.width = `${fn.inputWidth}ch`;
-  input.style.margin = '0 .15rem';
-  input.style.padding = '0 .15rem';
-  input.style.textAlign = 'center';
-  input.style.transform = 'translateY(5%)';
-  return input;
-}
+
 
