@@ -8,7 +8,7 @@ function addLength(str) {
 }
 
 addLength.newName = 'Length of Each Word';
-addLength.inputWidth = 22;
+addLength.inputWidth = 20;
 addLength.info = 'Enter a sentence and the function will return an array with each word and its length.';
 addLength.link = 'https://www.codewars.com/kata/559d2284b5bb6799e9000047';
 frontend(addLength, 'word length per each');
