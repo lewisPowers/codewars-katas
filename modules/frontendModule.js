@@ -4,6 +4,7 @@ import infoTab from '/modules/funcInfo.js';
 
 export default function(fn, args) {
   let allArgsArr = getArgArr(arguments);
+  console.log(allArgsArr)
   let call = fn.apply(this, allArgsArr);
   let box = createEl('box', fn);
   let heading = createEl('h2');
@@ -16,7 +17,7 @@ export default function(fn, args) {
   let link = fn.link;
 
   heading.textContent = `${fn.newName || fn.name}`;
-  exampleInput.textContent = `Example Input: ${allArgsArr.map(el => ` ${el}`)}`;
+  exampleInput.textContent = `Example Input: ${allArgsArr.map(el => ` ${el} `)}`;
   exampleOutput.textContent = `Example Output: ${formatOutputString(call)}`;
   testOutput.textContent = `Test Output: `;
 
@@ -100,12 +101,18 @@ function formatOutputString(input) {
   if (Array.isArray(input)) {
     return input.reduce((string, element, i) => {
       if (i === input.length - 1) {
-        return string += `${element} ]`
+        return string += `${element} ]`;
       } else {
-        return string += `${element}, `
+        return string += `${element}, `;
       }
     }, '[ ');
+  } else if (Object.prototype.isPrototypeOf(input)) {
+    throw new Error;
   } else {
     return input;
   }
+}
+
+function formatIntoString(obj) {
+
 }

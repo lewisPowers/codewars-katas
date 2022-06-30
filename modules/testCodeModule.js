@@ -126,6 +126,3 @@ function createEl(tag, type, target) {
   }
   return $el;
 }
-
-
-
