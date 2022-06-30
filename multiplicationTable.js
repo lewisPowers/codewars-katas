@@ -20,4 +20,7 @@ function multiplicationTable(size) {
 multiplicationTable.log = true;
 multiplicationTable.newName = 'Multiplication Table';
 multiplicationTable.inputWidth = 3;
+multiplicationTable.info = "Create NxN multiplication table, of size provided in parameter.";
+multiplicationTable.link = 'https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08';
+multiplicationTable.kyu = 6;
 frontend(multiplicationTable, 5)
