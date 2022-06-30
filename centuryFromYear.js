@@ -12,4 +12,5 @@ century.inputWidth = 6;
 century.newName = 'Get Century From Year';
 century.link = 'https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097'
 century.info = 'Enter a year into the function and the number returned is the corresponding century.';
+century.kyu = 8;
 frontend(century, 2000)

@@ -12,4 +12,7 @@ function solve(str) {
 window.solve = solve;
 solve.newName = 'Fix String Case';
 solve.inputWidth = 11;
+solve.link = 'https://www.codewars.com/kata/5b180e9fedaa564a7000009a';
+solve.kyu = 7;
+solve.info = 'Converts the input to either lowercase only or uppercase only based on: making fewest changes possible, and; if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.'
 frontend(solve, 'CoDe');

@@ -16,7 +16,9 @@ function movie(cardPrice, ticketPrice, percentDiscount) {
   }
 };
 movie.newName = 'Compare Price: Movie Tickets vs Movie Card';
-movie.inputWidth = 3;
+movie.inputWidth = 5;
+movie.info = '';
+movie.link = '';
 frontend(movie, 500, 15, 0.9);
 
 // My friend John likes to go to the cinema. He can choose between system A and system B.

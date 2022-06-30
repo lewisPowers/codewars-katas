@@ -16,5 +16,6 @@ smallEnough.newName = 'Are All Values Within the Limit?';
 smallEnough.inputWidth = 11;
 smallEnough.link = 'https://www.codewars.com/kata/57cc981a58da9e302a000214';
 smallEnough.info = 'Given an array of numbers and a limit value, will return true if ALL values are less than or equal to the limit value.';
+smallEnough.kyu = 7;
 let testArr = [1,2,3];
 frontend(smallEnough, testArr, 3);

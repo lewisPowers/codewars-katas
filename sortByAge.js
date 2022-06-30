@@ -7,6 +7,7 @@ function orderPeople(people){
 orderPeople.newName = 'Sort People By Their Age';
 orderPeople.info = 'Sort and Order people by their age using Arrow Functions';
 orderPeople.inputWidth = 20;
+orderPeople.kyu = 7;
 orderPeople.link = 'https://www.codewars.com/kata/559f3e20f4f29869cf0000ea/train/javascript';
 let peopleArray = [
   { age: 83, name: 'joel' },

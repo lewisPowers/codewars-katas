@@ -12,5 +12,8 @@ function getSize(w, h, d) {
 }
 window.getSize = getSize;
 getSize.newName = 'Area & Volume of Box';
+getSize.info = 'Returns the total surface area and volume of a box as an array';
 getSize.inputWidth = 3;
+getSize.kyu = 8;
+getSize.link = 'https://www.codewars.com/kata/565f5825379664a26b00007c';
 frontend(getSize, 10, 20, 5)
