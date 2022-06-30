@@ -15,13 +15,14 @@ export default function(fn, args) {
   let testOutput = createEl('span', ['answer', 'green']);
   let code = formatCode(fn.toString());
   let link = fn.link;
+  let rank = fn.kyu || '?';
 
   heading.textContent = `${fn.newName || fn.name}`;
   exampleInput.textContent = `Example Input: ${allArgsArr.map(el => ` ${el} `)}`;
   exampleOutput.textContent = `Example Output: ${formatOutputString(call)}`;
   testOutput.textContent = `Test Output: `;
 
-  infoTab(box, fn.info, link);
+  infoTab(box, fn.info, link, rank);
   exampleDiv.append(exampleInput, exampleOutput);
   testDiv.append(testCode(fn, allArgsArr, box.id));
   box.append(heading, code, exampleDiv, testDiv, testOutput);
