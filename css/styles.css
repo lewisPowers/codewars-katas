@@ -3,6 +3,20 @@
   /* padding: 0; */
   box-sizing: border-box;
   font-family: 'Kdam Thmor Pro';
+  --bordercolor: black;
+}
+
+body {
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+h1 {
+  display: block;
+  width: 100vw;
+  text-align: center;
 }
 
 .module {
@@ -15,20 +29,24 @@
 
 .submit:hover {
   cursor: pointer;
-  background-color: rgba(50, 50, 50, 0.104) !important;
-  transition: background-color 350ms;
+  background-color: rgba(50, 50, 50, 0.623) !important;
+  color: white;
+  transition: background-color 350ms, color 350ms;
 }
 .submit {
-  transition: background-color 350ms;
+  transition: background-color 350ms, color 350ms;
 }
 
-.inner-small-hex span {
-  z-index: 2;
-  position: relative;
+.is-blue-rank {
+  --bordercolor: rgb(31,126,215);
 }
 
-.small-hex.is-extra-wide {
-  width: 34px;
+.is-yellow-rank {
+  --bordercolor: rgb(163, 163, 0);
+}
+
+.is-white-rank {
+  --bordercolor: black;
 }
 
 .small-hex {
@@ -46,14 +64,14 @@
   text-shadow: none;
   line-height: 28px;
   font-size: 12px;
-  filter: var(--rank-hex-filter);
+  /* filter: var(--rank-hex-filter); */
 }
 
 .small-hex:before {
   content: " ";
   width: 0;
   height: 0;
-  border-right: 8px solid red;
+  border-right: 8px solid var(--bordercolor);
   border-top: 13px solid transparent;
   border-bottom: 13px solid transparent;
   position: absolute;
@@ -68,40 +86,57 @@
   position: absolute;
   right: -8px;
   top: 0;
-  border-left: 8px solid red;
+  border-left: 8px solid var(--bordercolor);
   border-top: 13px solid transparent;
   border-bottom: 13px solid transparent;
   z-index: 0;
   -moz-transform: scale(.9999);
 }
 
+.small-hex.is-extra-wide,
+.inner-small-hex.is-extra-wide {
+  width: 34px;
+  height: 26px;
+}
+
+.inner-small-hex span {
+  z-index: 2;
+  position: relative;
+  top: -5px;
+}
+
+.inner-small-hex {
+  background-color: white;
+  border-top: 3.5px solid var(--bordercolor);
+  border-bottom: 3.5px solid var(--bordercolor);
+}
 
 .inner-small-hex:before {
-  content: " ";
+  content: "";
   width: 0;
   height: 0;
-  border-right: 6px solid rgb(163, 163, 0);
+  border-right: 6px solid white;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
   position: absolute;
-  left: -6px;
+  left: -5px;
+  top: 2px;
   z-index: 0;
-  -moz-transform: scale(.9999);
+  /* -moz-transform: scale(.9999); */
+  /* transform: scale(.9); */
 }
 
 .inner-small-hex:after {
   content: "";
   width: 0;
   position: absolute;
-  right: -6px;
-  top: 0;
-  border-left: 6px solid rgb(163, 163, 0);
+  right: -5px;
+  top: 2px;
+  border-left: 6px solid white;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
-  -moz-transform: scale(.9999);
+  /* -moz-transform: scale(.9999); */
+  transform: scale(.9);
   z-index: 2;
 }
 
-.small-hex.is-yellow-rank {
-  background-color: rgb(163, 163, 0);;
-}
