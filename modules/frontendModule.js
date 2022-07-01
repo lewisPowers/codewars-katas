@@ -1,10 +1,10 @@
 import formatCode from '/modules/formatCode.js';
 import testCode from '/modules/testCodeModule.js';
 import infoTab from '/modules/funcInfo.js';
+import formatStrings from '/modules/formatStrings.js';
 
 export default function(fn, args) {
   let allArgsArr = getArgArr(arguments);
-  console.log(allArgsArr)
   let call = fn.apply(this, allArgsArr);
   let box = createEl('box', fn);
   let heading = createEl('h2');
@@ -18,8 +18,9 @@ export default function(fn, args) {
   let rank = fn.kyu || '?';
 
   heading.textContent = `${fn.newName || fn.name}`;
-  exampleInput.textContent = `Example Input: ${allArgsArr.map(el => ` ${el} `)}`;
-  exampleOutput.textContent = `Example Output: ${formatOutputString(call)}`;
+  let argsStr = mapArgs(allArgsArr);
+  exampleInput.textContent = `Example Input: ${argsStr}`;
+  exampleOutput.textContent = `Example Output: ${formatStrings(call)}`;
   testOutput.textContent = `Test Output: `;
 
   infoTab(box, fn.info, link, rank);
@@ -98,22 +99,8 @@ function createEl(tagOrClass, classesOrXtra) {
   }
 }
 
-function formatOutputString(input) {
-  if (Array.isArray(input)) {
-    return input.reduce((string, element, i) => {
-      if (i === input.length - 1) {
-        return string += `${element} ]`;
-      } else {
-        return string += `${element}, `;
-      }
-    }, '[ ');
-  } else if (Object.prototype.isPrototypeOf(input)) {
-    throw new Error;
-  } else {
-    return input;
-  }
-}
-
-function formatIntoString(obj) {
-
+function mapArgs(array) {
+  return array.map( (el) => {
+    return formatStrings(el);
+  })
 }
