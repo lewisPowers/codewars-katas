@@ -1,3 +1,5 @@
+import formatStrings from '/modules/formatStrings.js';
+
 export default function(fn, argsArr, targetId) {
   let container = createEl('div', 'container');
   let title = createEl('h4', 'title');
@@ -37,7 +39,7 @@ export default function(fn, argsArr, targetId) {
     fn[key] = fn.apply(this, args);
     let children = moduleClicked.children;
     let span = children[children.length - 1];
-    span.textContent = `Test Output: ${formatOutputString(fn[key])}`;
+    span.textContent = `Test Output: ${formatStrings(fn[key])}`;
     if (fn.log) {
       console.log(fn[key]);
     }
@@ -46,11 +48,7 @@ export default function(fn, argsArr, targetId) {
   function buildInputEl(fn, arg, index, parent) {
     let input = document.createElement('input');
     input.classList.add('argument');
-    if (Array.isArray(arg)) {
-      input.value = `[${arg}]`;
-    } else {
-      input.value = arg;
-    }
+    input.value = formatStrings(arg);
     input.style.width = `${fn.inputWidth}ch`;
     input.style.margin = '0 .15rem';
     input.style.padding = '0 .15rem';
@@ -65,19 +63,19 @@ export default function(fn, argsArr, targetId) {
   }
 }
 
-function formatOutputString(input) {
-  if (Array.isArray(input)) {
-    return input.reduce((string, element, i) => {
-      if (i === input.length - 1) {
-        return string += `${element} ]`
-      } else {
-        return string += `${element}, `
-      }
-    }, '[ ');
-  } else {
-    return input;
-  }
-}
+// function formatOutputString(input) {
+//   if (Array.isArray(input)) {
+//     return input.reduce((string, element, i) => {
+//       if (i === input.length - 1) {
+//         return string += `${element} ]`
+//       } else {
+//         return string += `${element}, `
+//       }
+//     }, '[ ');
+//   } else {
+//     return input;
+//   }
+// }
 
 function makeCommas(elType) {
   let el = document.createElement(elType);
