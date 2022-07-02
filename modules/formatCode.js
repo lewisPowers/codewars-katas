@@ -13,13 +13,15 @@ export default function formatCode(fnString) {
         formatCode['`'] === undefined ? formatCode['`'] = 1 : formatCode['`']++;
         line += fnString[i];
       } else if (!formatCode['`'] || formatCode['`'] % 2 === 0) {
-        if ( fnString[i] === '}' && (fnString[i + 1] === ')' ||  // for '})'
-        fnString[i + 1] === ';' || fnString[i + 1] === "'" || fnString[i + 1] === ",") || // & '};'  & '}'' & "},"
+        if ( fnString[i] === '}' && ( fnString[i + 1] === ')' ||  // for '})'
+        ( fnString[i + 1] === ')' && line.length > 4 ) ||
+        fnString[i + 1] === ';' || fnString[i + 1] === "'" ||
+        fnString[i + 1] === "," || fnString[i + 2] === "e" ) || // & '};'  & '}'' & "}," & "} else"
           (fnString[i] === ';' && fnString[i + 1] === "'") || // for ; as string
           (fnString[i] === ';' && fnString[i + 2] === "i") || // in for loop definitions
           (fnString[i] === ',' && fnString[i - 1] !== "]") || // in objects
           (fnString[i] === '|' && fnString[i + 1] === "|") ||
-          (fnString[i] === '{' && fnString[i + 1] === "'")) { // for '{' as string
+          (fnString[i] === '{' && fnString[i + 1] === "'") ) { // for '{' as string
           if ( (fnString[i] === '}' && fnString[i + 1] === ')') ||
             (fnString[i] === '}' && fnString[i - 1] === ' ' || fnString[i - 1] === '}') ) {
             leftMargin -= 11;
