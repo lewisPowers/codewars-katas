@@ -5,10 +5,8 @@ export default function(input) {
 
   function formatOutputString(input) {
     if (Array.isArray(input)) {
-      // console.log('in ARRAY statement')
       return formatArrayIntoString(input)
     } else if (Object.prototype.isPrototypeOf(input)) {
-      // console.log('in OBJECT statement')
       return formatObjectIntoString(input);
     } else if (typeof input === 'string') {
       return `"${input}"`;
@@ -19,27 +17,27 @@ export default function(input) {
 
   function formatObjectIntoString(obj) {
     let objStr = '{';
-      Object.keys(obj).forEach( (key, i) => {
-          if (i === Object.keys(obj).length - 1) {
-              objStr += `"${key}": ${formatOutputString(obj[key])}`;
-          } else {
-              objStr += `"${key}": ${formatOutputString(obj[key])}, `;
-          }
-      })
-      objStr += '}';
-      return objStr;
+    Object.keys(obj).forEach( (key, i) => {
+      if (i === Object.keys(obj).length - 1) {
+          objStr += `"${key}": ${formatOutputString(obj[key])}`;
+      } else {
+          objStr += `"${key}": ${formatOutputString(obj[key])}, `;
+      }
+    })
+    objStr += '}';
+    return objStr;
   }
 
   function formatArrayIntoString(arr) {
     let arrStr = '[ ';
-      arr.forEach( (el, i) => {
-          if (i === arr.length - 1) {
-            arrStr += `${formatOutputString(el)}`;
-          } else {
-            arrStr += `${formatOutputString(el)}, `;
-          }
-      })
-      arrStr += ' ]';
-      return arrStr;
+    arr.forEach( (el, i) => {
+        if (i === arr.length - 1) {
+          arrStr += `${formatOutputString(el)}`;
+        } else {
+          arrStr += `${formatOutputString(el)}, `;
+        }
+    })
+    arrStr += ' ]';
+    return arrStr;
   }
 }
