@@ -14,8 +14,10 @@ export default function(fn, args) {
   let exampleOutput = createEl('h4', box.id);
   let testOutput = createEl('span', ['answer', 'green']);
   let code = formatCode(fn.toString());
+  let info = fn.info;
   let link = fn.link;
   let rank = fn.kyu || '?';
+  let spacing = fn.changeMargin ? Number(fn.changeMargin) : undefined;
 
   heading.textContent = `${fn.newName || fn.name}`;
   let argsStr = mapArgs(allArgsArr);
@@ -23,7 +25,7 @@ export default function(fn, args) {
   exampleOutput.textContent = `Example Output: ${formatStrings(call)}`;
   testOutput.textContent = `Test Output: `;
 
-  infoTab(box, fn.info, link, rank);
+  infoTab(box, info, link, rank, spacing);
   exampleDiv.append(exampleInput, exampleOutput);
   testDiv.append(testCode(fn, allArgsArr, box.id));
   box.append(heading, code, exampleDiv, testDiv, testOutput);
