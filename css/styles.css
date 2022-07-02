@@ -19,10 +19,10 @@ h1 {
   text-align: center;
 }
 
-.module,
-.module > .special-x {
+.module {
   position: relative;
   overflow: visible;
+  background-color: white;
 }
 
 .module.darken {
