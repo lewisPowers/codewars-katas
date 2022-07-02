@@ -1,7 +1,3 @@
-// build a script tag that will be appended to body
-//   - src attr
-//   - type attr = module
-
 let sourcesArr = [
   '/sortByAge.js',
   '/centuryFromYear.js',
@@ -21,8 +17,28 @@ let sourcesArr = [
   '/removeFirstLastII.js',
   '/meeting.js',
   '/checkAllBrackets.js',
-  '/buildDiamond.js'
+  '/buildDiamond.js',
+  '/checkExam.js',
+  '',
+  '/predictAge.js',
+  '/sumOfMinimums.js',
+  '/sumAngles.js',
+  '/stringCleaning.js',
+  '/takeDerivative.js',
+  '/printArray.js',
+  '/removeExclamations.js',
+  '/sumPairs.js',
+  '/tenMinuteWalk.js',
+  '/uniqueNumber.js',
+  '/stringEndsWith.js',
+  '/myToString.js',
+  '/sumStrings.js',
+  '/sortAndStar.js',
+  '/fiveArrFunctions.js',
+  '/stockList.js'
 ];
+
+let parentPath = '/functions'
 
 function appendScript(source) {
   let scriptEl = document.createElement('script');
@@ -31,13 +47,9 @@ function appendScript(source) {
   return scriptEl;
 }
 
-function allScripts() {
-  sourcesArr.forEach( (src, i) => {
+export default function() {
+  sourcesArr.map(str => parentPath + str).forEach(src => {
     let script = appendScript(src);
-    script.myIndex = i;
-    // console.log(script, script.myIndex);
     document.body.append(script);
   })
 }
-
-allScripts()

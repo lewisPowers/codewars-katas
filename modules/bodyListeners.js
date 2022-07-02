@@ -1,4 +1,4 @@
-(function() {
+export default function() {
   document.body.addEventListener('click',  function(e) {
     if (!e.target.classList.contains('info-btn') &&
       !e.target.classList.contains('info-tab') &&
@@ -17,4 +17,4 @@
       }
     }
   })
-})()
+}
