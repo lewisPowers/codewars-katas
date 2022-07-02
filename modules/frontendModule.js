@@ -100,6 +100,6 @@ function createEl(tagOrClass, classesOrXtra) {
 
 function mapArgs(array) {
   return array.map( (el) => {
-    return formatStrings(el);
+    return ` ${formatStrings(el)}`;
   })
 }
