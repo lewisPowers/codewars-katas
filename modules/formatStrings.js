@@ -1,11 +1,10 @@
 export default function(input) {
 
-  return formatOutputString(input)
-
+  return formatOutputString(input);
 
   function formatOutputString(input) {
     if (Array.isArray(input)) {
-      return formatArrayIntoString(input)
+      return formatArrayIntoString(input);
     } else if (Object.prototype.isPrototypeOf(input)) {
       return formatObjectIntoString(input);
     } else if (typeof input === 'string') {

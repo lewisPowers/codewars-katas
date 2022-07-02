@@ -1,4 +1,4 @@
-import frontend from './modules/frontendModule.js';
+import frontend from '../modules/frontendModule.js';
 
 // ONE LINE ITERATIVE OPTION
 function factorial(n){
