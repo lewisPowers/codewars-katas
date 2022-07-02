@@ -19,7 +19,6 @@ let sourcesArr = [
   '/checkAllBrackets.js',
   '/buildDiamond.js',
   '/checkExam.js',
-  '',
   '/predictAge.js',
   '/sumOfMinimums.js',
   '/sumAngles.js',
@@ -35,12 +34,16 @@ let sourcesArr = [
   '/sumStrings.js',
   '/sortAndStar.js',
   '/fiveArrFunctions.js',
-  '/stockList.js'
+  '/stockList.js',
+  '/sumAngles.js',
+  '/printArray.js',
+  '/predictAge.js',
+  '/sumPairs.js'
 ];
 
 let parentPath = '/functions'
 
-function appendScript(source) {
+function createScript(source) {
   let scriptEl = document.createElement('script');
   scriptEl.type = 'module';
   scriptEl.src = source;
@@ -49,7 +52,7 @@ function appendScript(source) {
 
 export default function() {
   sourcesArr.map(str => parentPath + str).forEach(src => {
-    let script = appendScript(src);
+    let script = createScript(src);
     document.body.append(script);
   })
 }
