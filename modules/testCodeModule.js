@@ -48,7 +48,7 @@ export default function(fn, argsArr, targetId) {
   function buildInputEl(fn, arg, index, parent) {
     let input = document.createElement('input');
     input.classList.add('argument');
-    input.value = formatStrings(arg);
+    input.value = typeof arg === 'string' ? arg : formatStrings(arg);
     input.style.width = `${fn.inputWidth}ch`;
     input.style.margin = '0 .15rem';
     input.style.padding = '0 .15rem';
