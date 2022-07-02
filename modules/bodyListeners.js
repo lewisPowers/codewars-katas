@@ -10,6 +10,7 @@ export default function() {
         infoTabs.forEach(el => {
           if (!el.classList.contains('hidden')) {
             let module = el.closest('section');
+            el.nextSibling.classList.remove('special-x')
             module.classList.remove('darken');
             el.classList.add('hidden');
           }
