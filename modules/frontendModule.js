@@ -28,7 +28,6 @@ export default function(fn, args) {
   testDiv.append(testCode(fn, allArgsArr, box.id));
   box.append(heading, code, exampleDiv, testDiv, testOutput);
   document.body.append(box);
-
 }
 
 function uuid() {
