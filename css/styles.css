@@ -19,12 +19,18 @@ h1 {
   text-align: center;
 }
 
-.module {
+.module,
+.module > .special-x {
   position: relative;
+  overflow: visible;
 }
 
 .module.darken {
   background-color: rgba(115, 115, 115, 0.192);
+}
+
+.test-input {
+  min-width: max-content;
 }
 
 .submit:hover {
@@ -37,106 +43,4 @@ h1 {
   transition: background-color 350ms, color 350ms;
 }
 
-.is-blue-rank {
-  --bordercolor: rgb(31,126,215);
-}
-
-.is-yellow-rank {
-  --bordercolor: rgb(163, 163, 0);
-}
-
-.is-white-rank {
-  --bordercolor: black;
-}
-
-.small-hex {
-  height: 26px;
-  width: 15px;
-  background-color:aliceblue;
-  /* color: var(--color-small-hex-bg); */
-  color: black;
-  position: relative;
-  margin-right: 8px;
-  margin-left: 8px;
-  text-align: center;
-  font-weight: 700;
-  z-index: 1;
-  text-shadow: none;
-  line-height: 28px;
-  font-size: 12px;
-  /* filter: var(--rank-hex-filter); */
-}
-
-.small-hex:before {
-  content: " ";
-  width: 0;
-  height: 0;
-  border-right: 8px solid var(--bordercolor);
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  position: absolute;
-  left: -8px;
-  z-index: 0;
-  -moz-transform: scale(.9999);
-}
-
-.small-hex:after {
-  content: "";
-  width: 0;
-  position: absolute;
-  right: -8px;
-  top: 0;
-  border-left: 8px solid var(--bordercolor);
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  z-index: 0;
-  -moz-transform: scale(.9999);
-}
-
-.small-hex.is-extra-wide,
-.inner-small-hex.is-extra-wide {
-  width: 34px;
-  height: 26px;
-}
-
-.inner-small-hex span {
-  z-index: 2;
-  position: relative;
-  top: -5px;
-}
-
-.inner-small-hex {
-  background-color: white;
-  border-top: 3.5px solid var(--bordercolor);
-  border-bottom: 3.5px solid var(--bordercolor);
-}
-
-.inner-small-hex:before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-right: 6px solid white;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-  position: absolute;
-  left: -5px;
-  top: 2px;
-  z-index: 0;
-  /* -moz-transform: scale(.9999); */
-  /* transform: scale(.9); */
-}
-
-.inner-small-hex:after {
-  content: "";
-  width: 0;
-  position: absolute;
-  right: -5px;
-  top: 2px;
-  border-left: 6px solid white;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-  /* -moz-transform: scale(.9999); */
-  transform: scale(.9);
-  z-index: 2;
-}
 
