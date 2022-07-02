@@ -2,7 +2,6 @@ export default function formatCode(fnString) {
   fnString = removeExcessWhitespace(fnString);
   let mainContainer = createElement('div');
   let pElement = createElement('p');
-  // pElement.style.padding = '0 4px'
   let line = '';
   let leftMargin = 0;
   let triggers = [';', '{', '}', '`', ',', '|' ];
@@ -70,7 +69,6 @@ export default function formatCode(fnString) {
       mainContainer.append(newPElement);
       newPElement = createElement('p', leftMargin)
     }
-    // newPElement.style.padding = '0 4px';
     return newPElement;
   }
 }
@@ -89,7 +87,6 @@ function createElement(tag, leftMargin) {
 }
 
 function parseNum(str) {
-  // '22px'
   let arr = str.split('')
   while (isNaN(arr[arr.length - 1])) {
       arr.length--;
