@@ -1,4 +1,4 @@
-export default function(targetElement, funcInfo, linkStr, kyuRank) {
+export default function(targetElement, funcInfo, linkStr, kyuRank, marginChange) {
   let container = document.createElement('div');
   let infoBtn = document.createElement('div');
   let infoTab = document.createElement('div');
@@ -11,14 +11,20 @@ export default function(targetElement, funcInfo, linkStr, kyuRank) {
 
   infoBtn.classList.add('info-btn');
   infoTab.classList.add('info-tab', 'hidden');
-  pEl.textContent = funcInfo || 'TEST TEST 1...2...3...4.5.6';
+  pEl.textContent = funcInfo || 'TEST TEST 1...2...3...';
   infoTab.append(rankEl, pEl, linkEl);
 
   infoBtn.addEventListener('click', function(e) {
     let moduleClicked = e.target.closest('section');
+    moduleClicked.margin = marginChange;
     let tab = moduleClicked.getElementsByClassName('info-tab')[0];
     moduleClicked.classList.toggle('darken');
     tab.classList.toggle('hidden');
+    if ( moduleClicked.margin !== undefined) {
+      moduleClicked.style.overflow = 'visible';
+      infoTab.style.margin = 0;
+      infoBtn.classList.toggle('special-x');
+    }
   })
 
   container.append(infoTab, infoBtn);
@@ -28,7 +34,7 @@ export default function(targetElement, funcInfo, linkStr, kyuRank) {
     let outerDiv = document.createElement('div');
     let innerDiv = document.createElement('div');
     let span = document.createElement('span');
-    outerDiv.classList.add('small-hex', 'is-extra-wide', 'is-yellow-rank');
+    outerDiv.classList.add('small-hex', 'is-extra-wide');
     innerDiv.classList.add('inner-small-hex', 'is-extra-wide');
     if (kyuNum > 6) {
       outerDiv.classList.add('is-white-rank');
