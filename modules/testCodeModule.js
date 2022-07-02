@@ -63,20 +63,6 @@ export default function(fn, argsArr, targetId) {
   }
 }
 
-// function formatOutputString(input) {
-//   if (Array.isArray(input)) {
-//     return input.reduce((string, element, i) => {
-//       if (i === input.length - 1) {
-//         return string += `${element} ]`
-//       } else {
-//         return string += `${element}, `
-//       }
-//     }, '[ ');
-//   } else {
-//     return input;
-//   }
-// }
-
 function makeCommas(elType) {
   let el = document.createElement(elType);
   el.style.margin = '0';
