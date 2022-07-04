@@ -29,7 +29,13 @@ export default function(fn, args) {
   exampleDiv.append(exampleInput, exampleOutput);
   testDiv.append(testCode(fn, allArgsArr, box.id));
   box.append(heading, code, exampleDiv, testDiv, testOutput);
-  document.body.append(box);
+  let container = isNaN(rank) ? document.getElementById('unknown-rank') :
+    rank > 6 ? document.getElementById('white-rank') :
+    rank > 4 ? document.getElementById('yellow-rank') :
+    rank > 2 ? document.getElementById('blue-rank') :
+    document.getElementById('purple-rank');
+
+  container.append(box);
 }
 
 function uuid() {
