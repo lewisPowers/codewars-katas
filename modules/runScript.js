@@ -38,7 +38,15 @@ let sourcesArr = [
   '/sumAngles.js',
   '/printArray.js',
   '/predictAge.js',
-  '/sumPairs.js'
+  '/sumPairs.js',
+  '/mixStrings.js',
+  '/revrot.js',
+  '/reorderSentence.js',
+  '/sudokuIsSolved.js',
+  '/encryptThis.js',
+  '/checkCoupon.js',
+  '/formatDuration.js',
+  '/bestTravel.js'
 ];
 
 let parentPath = '/functions'
