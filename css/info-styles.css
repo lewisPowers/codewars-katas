@@ -7,12 +7,12 @@
 .info-btn {
   height: 10px;
   width: 10px;
-  top: 40px;
+  top: 20px;
   right: 20px;
 }
 
 .info-btn::after {
-  content: '?';
+  content: 'ℹ️';
   cursor: help;
 }
 

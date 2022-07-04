@@ -13,7 +13,6 @@
 .small-hex {
   height: 26px;
   width: 15px;
-  background-color:aliceblue;
   color: black;
   position: relative;
   margin-right: 8px;
@@ -37,7 +36,7 @@
   position: absolute;
   left: -8px;
   z-index: 0;
-  -moz-transform: scale(.9999);
+  transform: scale(.9999);
 }
 
 .small-hex:after {
@@ -50,7 +49,7 @@
   border-top: 13px solid transparent;
   border-bottom: 13px solid transparent;
   z-index: 0;
-  -moz-transform: scale(.9999);
+  transform: scale(.9999);
 }
 
 .small-hex.is-extra-wide,
@@ -66,9 +65,13 @@
 }
 
 .inner-small-hex {
-  background-color: white;
   border-top: 3.5px solid var(--bordercolor);
   border-bottom: 3.5px solid var(--bordercolor);
+}
+
+.inner-small-hex:before,
+.inner-small-hex:after {
+  transform: scale(.8);
 }
 
 .inner-small-hex:before {
@@ -82,8 +85,6 @@
   left: -5px;
   top: 2px;
   z-index: 0;
-  /* -moz-transform: scale(.9999); */
-  /* transform: scale(.9); */
 }
 
 .inner-small-hex:after {
@@ -95,7 +96,11 @@
   border-left: 6px solid white;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
-  /* -moz-transform: scale(.9999); */
-  transform: scale(.9);
   z-index: 2;
+}
+
+
+.inner-small-hex,
+.inner-small-hex span {
+  background-color: transparent;
 }

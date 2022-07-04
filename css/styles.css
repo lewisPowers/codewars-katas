@@ -4,7 +4,8 @@
   --bordercolor: black;
 }
 
-body {
+body,
+.rank-div {
   display:flex;
   flex-wrap: wrap;
   align-items: center;
@@ -15,6 +16,29 @@ h1 {
   display: block;
   width: 100vw;
   text-align: center;
+}
+
+.heading {
+  width: 100%;
+  text-align: center;
+  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-color: black;
+}
+
+.heading.purple > h2 {
+  -webkit-text-fill-color:purple;
+}
+
+.heading.blue > h2 {
+  -webkit-text-fill-color:#1f7ed7;
+}
+
+.heading.yellow > h2 {
+  -webkit-text-fill-color:yellow;
+}
+
+.heading.white > h2 {
+  -webkit-text-fill-color:white;
 }
 
 .module {
