@@ -8,6 +8,9 @@ function array(arr){
 }
 array.newName = 'removeFirstLast';
 array.inputWidth = 10;
+array.kyu = 8;
+array.info = 'Removes the first and last characters of a string.';
+array.link = 'https://www.codewars.com/kata/56bc28ad5bdaeb48760009b0';
 frontend(array, '1,2,3')
 
 // EXAMPLE:

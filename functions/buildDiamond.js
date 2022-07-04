@@ -20,11 +20,13 @@ function diamond(n){
   let result = diamondBuilderArray.map(str => {
     return str = `${str}\n`;
   }).join('');
-  // console.log(result);
   return result;
 }
 
 diamond.log = true;
-diamond.newName = 'Build a Diamond';
+diamond.newName = 'Give Me a Diamond';
 diamond.inputWidth = 3;
+diamond.info = 'Returns a string that looks like a diamond shape when printed on the screen, using asterisk (*) characters. Open console to see proper output.';
+diamond.kyu = 6;
+diamond.link = 'https://www.codewars.com/kata/5503013e34137eeeaa001648';
 frontend(diamond, 5);
