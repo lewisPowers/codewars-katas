@@ -9,6 +9,7 @@ export default function(input) {
       return formatObjectIntoString(input);
     } else if (typeof input === 'string') {
       return `"${input}"`;
+      // return formatStringOutputFromString(input);
     } else {
       return input;
     }
@@ -39,4 +40,8 @@ export default function(input) {
     arrStr += ' ]';
     return arrStr;
   }
+
+  // function formatStringOutputFromString(string) {
+
+  // }
 }

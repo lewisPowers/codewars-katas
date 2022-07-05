@@ -41,6 +41,10 @@ export default function(fn, argsArr, targetId) {
     let span = children[children.length - 1];
     span.textContent = `Test Output: ${formatStrings(fn[key])}`;
     if (fn.log) {
+      let consoleMessageEl = createEl('p');
+      consoleMessageEl.textContent = '❗Open console to see better output❗';
+      consoleMessageEl.style.textAlign = 'center';
+      moduleClicked.append(consoleMessageEl);
       console.log(fn[key]);
     }
   }
@@ -79,16 +83,14 @@ function createEl(tag, type, target) {
   if (type === 'container') {
     $el.style.display = 'flex';
     $el.style.maxHeight = '1.5rem';
-  }
-  if (type === 'submit') {
+  } else if (type === 'submit') {
     $el.type = 'submit';
     $el.style.backgroundColor = 'rgba(5,255,5,.06)';
     $el.style.borderRadius = '4px';
     $el.style.fontFamily = 'Kdam Thmor Pro';
     $el.id = target;
     $el.value = 'Run Code';
-  }
-  if (type === 'closing' || type === 'opening' || type === 'title') {
+  } else if (type === 'closing' || type === 'opening' || type === 'title') {
     $el.style.margin = '4px 0.15rem 0';
     $el.style.padding = '0';
     $el.style.fontFamily = 'monospace';

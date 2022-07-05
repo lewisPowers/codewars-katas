@@ -34,7 +34,6 @@ export default function(fn, args) {
     rank > 4 ? document.getElementById('yellow-rank') :
     rank > 2 ? document.getElementById('blue-rank') :
     document.getElementById('purple-rank');
-
   container.append(box);
 }
 
