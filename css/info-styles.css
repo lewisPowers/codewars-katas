@@ -13,13 +13,12 @@
 
 .info-btn::after {
   content: 'ℹ️';
-  cursor: help;
+  cursor: alias;
 }
 
 .info-btn.special-x::after {
   z-index: 3;
   content: 'X';
-  cursor: auto;
 }
 
 .info-tab {
