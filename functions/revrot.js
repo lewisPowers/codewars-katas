@@ -10,6 +10,7 @@ function revrot(str, sz) {
   }
   let chunks = function() {
     let arr = [];
+    if (typeof str !== 'string') str = str.toString()
     let copy = str.slice()
     while (copy.length >= sz) {
       let substr = copy.slice(0, sz);
