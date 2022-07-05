@@ -46,7 +46,14 @@ let sourcesArr = [
   '/encryptThis.js',
   '/checkCoupon.js',
   '/formatDuration.js',
-  '/bestTravel.js'
+  '/bestTravel.js',
+  '/compareArrays.js',
+  '/discountHoliday.js',
+  '/repeater.js',
+  '/evaporator.js',
+  '/flattenAndSort.js',
+  '/reverseWords.js',
+  '/removeUrlAnchor.js'
 ];
 
 let parentPath = '/functions'
