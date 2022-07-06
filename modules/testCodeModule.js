@@ -39,12 +39,16 @@ export default function(fn, argsArr, targetId) {
     fn[key] = fn.apply(this, args);
     let children = moduleClicked.children;
     let span = children[children.length - 1];
+    if (span.tagName !== 'SPAN') span = children[children.length - 2];
     span.textContent = `Test Output: ${formatStrings(fn[key])}`;
     if (fn.log) {
-      let consoleMessageEl = createEl('p');
-      consoleMessageEl.textContent = '❗Open console to see better output❗';
-      consoleMessageEl.style.textAlign = 'center';
-      moduleClicked.append(consoleMessageEl);
+      if (!fn.logged) {
+        fn.logged = true;
+        let consoleMessageEl = createEl('p');
+        consoleMessageEl.textContent = '❗Open console to see better output❗';
+        consoleMessageEl.style.textAlign = 'center';
+        moduleClicked.append(consoleMessageEl);
+      }
       console.log(fn[key]);
     }
   }
