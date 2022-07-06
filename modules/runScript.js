@@ -77,7 +77,8 @@ let sourcesArr = [
   '/distinct.js',
   '/formMinValue.js',
   '/parseIntFromString.js',
-  '/sumDigitsString.js'
+  '/sumDigitsString.js',
+  '/stripComments.js'
 ];
 
 let parentPath = '/functions'
