@@ -71,7 +71,9 @@ let sourcesArr = [
   '/rowWeights.js',
   '/sumOfSequence.js',
   '/xor.js',
-  '/isIncluded.js'
+  '/isIncluded.js',
+  '/findMultiples.js',
+  '/getChar.js'
 ];
 
 let parentPath = '/functions'
