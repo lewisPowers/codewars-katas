@@ -61,9 +61,12 @@ export default function(fn, argsArr, targetId, fnCall) {
 
   function buildInputEl(fn, arg, index, parent) {
     let input = document.createElement('input');
+    let inputLen = arg.toString().length;
+    console.log(`Arg: `, arg, 'Length: ', arg.toString().length)
     input.classList.add('argument');
     input.value = typeof arg === 'string' ? arg : formatStrings(arg);
-    input.style.width = `${fn.inputWidth}ch`;
+    // input.style.width = `${fn.inputWidth}ch`;
+    input.style.width = `${inputLen + 2}ch`;
     input.style.margin = '0 .15rem';
     input.style.padding = '0 .15rem';
     input.style.textAlign = 'center';
