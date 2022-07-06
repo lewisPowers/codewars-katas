@@ -1,6 +1,6 @@
 import formatStrings from '/modules/formatStrings.js';
 
-export default function(fn, argsArr, targetId) {
+export default function(fn, argsArr, targetId, fnCall) {
   let container = createEl('div', 'container');
   let title = createEl('h4', 'title');
   let testInput = createEl('h4', 'test-input');
@@ -36,7 +36,13 @@ export default function(fn, argsArr, targetId) {
       }
     });
     let key = fn.toString();
-    fn[key] = fn.apply(this, args);
+    debugger;
+    if (key === 'solution') {
+
+      console.log(fn[key])
+
+    }
+    fn[key] = fnCall;
     let children = moduleClicked.children;
     let span = children[children.length - 1];
     if (span.tagName !== 'SPAN') span = children[children.length - 2];
