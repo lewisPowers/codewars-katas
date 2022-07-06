@@ -2,7 +2,7 @@ let sourcesArr = [
   '/sortByAge.js',
   '/centuryFromYear.js',
   '/isPalindrome.js',
-  '/factorial.js',
+  '/triangleNumber.js',
   '/addLength.js',
   '/multiplicationTable.js',
   '/boxFacts.js',
@@ -53,7 +53,25 @@ let sourcesArr = [
   '/evaporator.js',
   '/flattenAndSort.js',
   '/reverseWords.js',
-  '/removeUrlAnchor.js'
+  '/removeUrlAnchor.js',
+  '/doubleChar.js',
+  '/expressionsMatter.js',
+  '/factorial.js',
+  '/findCapitals.js',
+  '/hexToDec.js',
+  '/isIsogram.js',
+  '/isSortedAndHow.js',
+  '/isUpperCase.js',
+  '/multipleOfIndex.js',
+  '/printerError.js',
+  '/removeExclamations.js',
+  '/removeNExclamations.js',
+  '/removeMinimum.js',
+  '/removeZeros.js',
+  '/rowWeights.js',
+  '/sumOfSequence.js',
+  '/xor.js',
+  '/isIncluded.js'
 ];
 
 let parentPath = '/functions'
