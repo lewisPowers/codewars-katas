@@ -73,7 +73,11 @@ let sourcesArr = [
   '/xor.js',
   '/isIncluded.js',
   '/findMultiples.js',
-  '/getChar.js'
+  '/getChar.js',
+  '/distinct.js',
+  '/formMinValue.js',
+  '/parseIntFromString.js',
+  '/sumDigitsString.js'
 ];
 
 let parentPath = '/functions'
