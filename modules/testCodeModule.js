@@ -36,12 +36,6 @@ export default function(fn, argsArr, targetId, fnCall) {
       }
     });
     let key = fn.toString();
-    debugger;
-    if (key === 'solution') {
-
-      console.log(fn[key])
-
-    }
     fn[key] = fnCall;
     let children = moduleClicked.children;
     let span = children[children.length - 1];
@@ -61,11 +55,9 @@ export default function(fn, argsArr, targetId, fnCall) {
 
   function buildInputEl(fn, arg, index, parent) {
     let input = document.createElement('input');
-    let inputLen = arg.toString().length;
-    console.log(`Arg: `, arg, 'Length: ', arg.toString().length)
+    let inputLen = arg.toString().length < 85 ? arg.toString().length : 85;
     input.classList.add('argument');
     input.value = typeof arg === 'string' ? arg : formatStrings(arg);
-    // input.style.width = `${fn.inputWidth}ch`;
     input.style.width = `${inputLen + 2}ch`;
     input.style.margin = '0 .15rem';
     input.style.padding = '0 .15rem';
