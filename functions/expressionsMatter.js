@@ -7,7 +7,7 @@ function expressionMatter(a, b, c) {
     a * (b + c),
     (a + b) * c,
     a + b * c,
-    a * b + c,
+    a * b + c
   );
 }
 expressionMatter.newName = 'Expressions Matter';
