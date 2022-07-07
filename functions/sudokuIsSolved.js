@@ -20,7 +20,7 @@ function validSolution(nineRows) {
     let rowSet = new Set();
     nineRows[rowIndex].forEach(val => {
       rowSet.add(val);
-    })
+    });
     return rowSet;
   }
   function setFromColumn(colIndex) {
