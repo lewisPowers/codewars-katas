@@ -2,8 +2,7 @@ import frontend from '/modules/frontendModule.js';
 
 function xor(a, b) {
   return !(a && b) && (a && b);
-  // return (!a && !b) || (a && b) ? false : true;
-}
+  }
 
 xor.newName = 'Exclusive "or" (xor) Logical Operator';
 xor.link = 'https://www.codewars.com/kata/56fa3c5ce4d45d2a52001b3c';
