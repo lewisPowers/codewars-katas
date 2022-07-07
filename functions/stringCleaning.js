@@ -1,4 +1,4 @@
-import frontend from '../modules/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 
 function stringClean(s){
   return s.split('').filter( char => {
