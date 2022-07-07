@@ -1,8 +1,8 @@
-import frontend from '../modules/frontendModule.js';
+import frontend from '/modules/frontendModule.js';
 
 // SHORT ONE LINE ITERATIVE OPTION
 function factorialAdd(n){
-  return n < 1 || isNaN(n) || parseInt(n) !== n ? false : n * (n + 1) / 2
+  return n < 1 || isNaN(n) || parseInt(n) !== n ? false : n * (n + 1) / 2;
 };
 
 factorialAdd.newName = "Nth Triangle Number";
