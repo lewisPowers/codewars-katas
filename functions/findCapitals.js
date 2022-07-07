@@ -4,7 +4,7 @@ function capitals(word) {
   let arr = [];
   for (let i in word) {
     if (word[i].charCodeAt(0) >= 65 &&
-      word[i].charCodeAt(0) <= 90) arr.push(Number(i))
+      word[i].charCodeAt(0) <= 90) arr.push(Number(i));
   }
   return arr;
 };
