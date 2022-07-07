@@ -4,21 +4,21 @@ function revrot(str, sz) {
   if (sz <= 0 || str == '') return '';
   let rotate = function(substr) {
     return substr.slice(1).concat(substr[[0]]);
-  }
+  };
   let reverse = function(substr) {
-    return substr.split('').reverse().join('')
-  }
+    return substr.split('').reverse().join('');
+  };
   let chunks = function() {
     let arr = [];
-    if (typeof str !== 'string') str = str.toString()
-    let copy = str.slice()
+    if (typeof str !== 'string') str = str.toString();
+    let copy = str.slice();
     while (copy.length >= sz) {
       let substr = copy.slice(0, sz);
       arr.push(substr);
-      copy = copy.slice(sz)
+      copy = copy.slice(sz);
     }
     return arr;
-  }
+  };
   let isSumOfDigitsCubedDivibleByTwo = function(substr)  {
     let sum = substr.split('').map(char => {
       return Math.pow(char, 3);
@@ -26,7 +26,7 @@ function revrot(str, sz) {
       return a + c;
     }, 0);
     return sum % 2 === 0 ? true : false;
-  }
+  };
 
   let chunkArr = chunks();
   return chunkArr.map(substr => {
