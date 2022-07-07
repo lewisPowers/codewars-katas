@@ -2,7 +2,7 @@ import frontend from '/modules/frontendModule.js';
 
 function isValidWalk(walk) {
   if (walk.length !== 10) return false;
-  let [xAxis, yAxis] = [0, 0]
+  let [xAxis, yAxis] = [0, 0];
   walk.forEach(direction => {
     if (direction === 'n') {
       yAxis++;
@@ -13,7 +13,7 @@ function isValidWalk(walk) {
     } else if (direction === 'w') {
       xAxis--;
     }
-  })
+  });
   return xAxis === 0 && yAxis === 0;
 }
 
