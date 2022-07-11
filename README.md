@@ -1,6 +1,8 @@
 # ___Codewars Katas___
 Frontend modulator of custom-written 'kata' solutions from codewars.com using Javascript
 
+<img width="1349" alt="Codewars Katas ssat 1 39 03 PM" src="https://user-images.githubusercontent.com/52840741/178341735-987deebf-b43f-445d-aef8-2ebb9249a67c.png">
+
 - Creates an environment of exploration & learning for users:
   - Displays formatted custom code solution
   - Displays an example input/output
