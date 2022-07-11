@@ -15,10 +15,12 @@ function movie(cardPrice, ticketPrice, percentDiscount) {
     return oldPrice * percentDiscount;
   }
 };
+
 movie.newName = 'Compare Price: Movie Tickets vs Movie Card';
 movie.inputWidth = 5;
-movie.info = '';
-movie.link = '';
+movie.info = `My friend John likes to go to the cinema. He can choose between system A and system B. John wants to know how many times he must go to the cinema so that the final result of System B(buying the discount card), when rounded up to the next dollar, will be cheaper than System A(paying full price per ticket).`;
+movie.kyu = 7;
+movie.link = 'https://www.codewars.com/kata/562f91ff6a8b77dfe900006e';
 frontend(movie, 500, 15, 0.9);
 
 // My friend John likes to go to the cinema. He can choose between system A and system B.
