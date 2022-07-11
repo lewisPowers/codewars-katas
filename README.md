@@ -14,7 +14,7 @@
 
 - Information tab allows users to:
   - Read a brief description of what the function does
-  - See the 'kyu' rank of the function
+  - See the 'kyu' rank of the 'kata'
   - Link to solve the 'kata' themselves on codewars.com
 
 <img width="200" alt="Codewars Kataat 2 28 43 PM" src="https://user-images.githubusercontent.com/52840741/178346149-a6e394c4-b7c2-47d9-9312-c2daaed5778d.png"><img width="200" alt="Codewars Kataat 2 28 48 PM" src="https://user-images.githubusercontent.com/52840741/178344202-e2a4f24c-7d2f-4bb9-97ed-33c3feff9914.png">
@@ -23,7 +23,7 @@
 
 - Component-based design allows for code reusability
 - Each function 'module' is made of many scalable components that perform dynamcally:
-  - Inserts modules using custom sricptRunner
+  - Inserts modules using custom scriptRunner
   - Hides HTML elements from the page if element is empty/has no children
   - Builds frontend view using custom properties
 - All dymnamic abilities are created using custom written Javascript
