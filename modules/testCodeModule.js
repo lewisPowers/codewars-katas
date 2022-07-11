@@ -65,7 +65,11 @@ export default function(fn, argsArr, targetId, fnCall) {
     input.style.textAlign = 'center';
     input.style.transform = 'translateY(5%)';
     input.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') event.target.dispatchEvent(onSubmit(event));
+      if (event.key === 'Enter') {
+        event.target.dispatchEvent(onSubmit(event));
+      } else {
+        input.style.width = `${input.value.length + 2}ch`
+      }
     })
     return input;
   }
