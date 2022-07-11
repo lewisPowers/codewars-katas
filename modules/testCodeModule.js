@@ -36,7 +36,8 @@ export default function(fn, argsArr, targetId, fnCall) {
       }
     });
     let key = fn.toString();
-    fn[key] = fnCall;
+    // fn[key] = fnCall;
+    fn[key] = fn.apply(this, args);
     let children = moduleClicked.children;
     let span = children[children.length - 1];
     if (span.tagName !== 'SPAN') span = children[children.length - 2];
