@@ -1,4 +1,4 @@
-export default function(input) {
+export default function(input, isForTestInput) {
 
   return formatOutputString(input);
 
@@ -8,8 +8,14 @@ export default function(input) {
     } else if (Object.prototype.isPrototypeOf(input)) {
       return formatObjectIntoString(input);
     } else if (typeof input === 'string') {
+      if (input.includes('\n') && isForTestInput) {
+        return JSON.stringify(input);
+      }
+      // if (!isNaN(Number(input))) {
+      //   return `"${Number(input)}"`;
+      // }
+
       return `"${input}"`;
-      // return formatStringOutputFromString(input);
     } else {
       return input;
     }
@@ -41,7 +47,4 @@ export default function(input) {
     return arrStr;
   }
 
-  // function formatStringOutputFromString(string) {
-
-  // }
 }
