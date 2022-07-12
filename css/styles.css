@@ -76,6 +76,13 @@ h1 {
   min-width: max-content;
 }
 
+.argument {
+  margin: 0 .15rem;
+  padding: 0 .15rem;
+  text-align: center;
+  transform: translateY(5%);
+}
+
 .submit:hover {
   cursor: pointer;
   background-color: rgba(50, 50, 50, 0.623) !important;
