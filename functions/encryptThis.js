@@ -1,7 +1,6 @@
 import frontend from '/modules/frontendModule.js';
 
 function encryptThis(text) {
-  debugger;
   let swapChars = function(word) {
     let arr = word.split('');
     let swap = arr[0];
