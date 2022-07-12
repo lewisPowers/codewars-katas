@@ -28,6 +28,6 @@
   - Builds frontend view using custom properties
 - All dymnamic abilities are created using custom written Javascript
 
-## ___Try it Yourself__
+## ___Try it Yourself___
 
 Visit https://lewispowers.com/project_codewars.html
