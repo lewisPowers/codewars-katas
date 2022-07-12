@@ -27,7 +27,7 @@ export default function(fn, args) {
 
   infoTab(box, info, link, rank, spacing);
   exampleDiv.append(exampleInput, exampleOutput);
-  testDiv.append(testCode(fn, allArgsArr, box.id, call));
+  testDiv.append(testCode(fn, allArgsArr, box.id));
   box.append(heading, code, exampleDiv, testDiv, testOutput);
   let container = isNaN(rank) ? document.getElementById('unknown-rank') :
     rank > 6 ? document.getElementById('white-rank') :
@@ -95,12 +95,6 @@ function createEl(tagOrClass, classesOrXtra) {
     box.id = uuid();
     box.classList.add(box.id, 'module');
     box.fn = fn;
-    box.style.maxWidth = '80%';
-    box.style.overflow = 'hidden';
-    box.style.margin = '20px';
-    box.style.padding = '20px';
-    box.style.borderRadius = '5px';
-    box.style.boxShadow = '2px 4px 15px #999';
     return box;
   }
 }
