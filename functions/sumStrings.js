@@ -5,9 +5,9 @@ function sumStr(a,b) {
   function toNum(str) {
     return str === '' ? 0 : Number(str);
   }
+
 }
 
-sumStr.inputWidth = 9;
 sumStr.link = 'https://www.codewars.com/kata/5324945e2ece5e1f32000370';
 sumStr.info = 'Given the string representations of two integers, this function returns the string representation of the sum of those integers.';
 sumStr.kyu = 4;
