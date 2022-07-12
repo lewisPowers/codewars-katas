@@ -10,8 +10,8 @@ export default function(fn, args) {
   let heading = createEl('h2');
   let exampleDiv = createEl('div', 'gray');
   let testDiv = createEl('div', 'green');
-  let exampleInput = createEl('h4');
-  let exampleOutput = createEl('h4', box.id);
+  let exampleInput = createEl('h4', 'example-input');
+  let exampleOutput = createEl('h4', ['example-output', box.id]);
   let testOutput = createEl('span', ['answer', 'green']);
   let code = formatCode(fn.toString());
   let info = fn.info;
@@ -56,37 +56,11 @@ function getArgArr(arrLike) {
 function createEl(tagOrClass, classesOrXtra) {
   if (tagOrClass === 'box') return buildBox(classesOrXtra);
   let $el = document.createElement(tagOrClass);
-  $el.style.overflow = 'hidden';
   if (classesOrXtra && Array.isArray(classesOrXtra)) {
     classesOrXtra.forEach(className => {
       $el.classList.add(className)
     })
   } else if (classesOrXtra) $el.className = classesOrXtra;
-  if ($el.className === 'test-input') $el.style.display = 'flex';
-  if (tagOrClass === 'h4') {
-    $el.style.margin = '1em 0';
-  }
-  if (tagOrClass === 'div' || $el.className.includes('green') || $el.className.includes('test-input')) {
-    $el.style.margin = '0';
-    $el.style.padding = '0';
-    if ($el.className.includes('gray')) {
-      $el.style.marginTop = '15px';
-      $el.style.borderTopLeftRadius = '5px';
-      $el.style.borderTopRightRadius = '5px';
-      $el.style.padding = '5px 10px';
-      $el.style.backgroundColor = 'rgba(5,5,255,.25)';
-      $el.style.height = '100%';
-      $el.style.overflow = 'hidden';
-    }
-    if ($el.className.includes('green')) {
-      $el.style.padding = '10px';
-      $el.style.backgroundColor = 'rgba(5,255,5,.25)';
-      if (tagOrClass === 'span') {
-        $el.style.fontWeight = '700';
-        $el.style.lineHeight = '2.86em';
-      }
-    }
-  }
 
   return $el;
 
