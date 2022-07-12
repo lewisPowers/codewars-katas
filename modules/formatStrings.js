@@ -11,10 +11,6 @@ export default function(input, isForTestInput) {
       if (input.includes('\n') && isForTestInput) {
         return JSON.stringify(input);
       }
-      // if (!isNaN(Number(input))) {
-      //   return `"${Number(input)}"`;
-      // }
-
       return `"${input}"`;
     } else {
       return input;
