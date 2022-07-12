@@ -30,6 +30,34 @@ h1 {
   -webkit-text-stroke-color: black;
 }
 
+.title,
+.opening,
+.closing {
+  margin: 4px 0.15rem 0;
+  padding: 0;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.opening,
+.closing {
+  font-size: 19px;
+  margin-top: 0;
+}
+
+.title {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.test-input {
+  margin: 0;
+}
+
+.opening {
+  margin-left: 0;
+}
+
 .rank-div.purple {
   background-color: rgba(128, 0, 128, 0.346);
 }
@@ -62,10 +90,11 @@ h1 {
   -webkit-text-fill-color:white;
 }
 
-.module {
+section.module {
   position: relative;
   overflow: visible;
   background-color: white;
+  max-width: 100vw !important;
 }
 
 .module.darken {
@@ -74,6 +103,13 @@ h1 {
 
 .test-input {
   min-width: max-content;
+}
+
+.container-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-end;
+  max-height: 1.5rem;
 }
 
 .argument {
@@ -91,6 +127,33 @@ h1 {
 }
 .submit {
   transition: background-color 350ms, color 350ms;
+  background-color: rgba(5,255,5,.06);
+  border-radius: 4px;
 }
 
+.test-arg-comma {
+  margin: 0;
+}
 
+.console-message {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  .module {
+    width: 92vw;
+  }
+  .test-input {
+   width: 100%
+  }
+  .green {
+    height: 7.5em;
+  }
+  .green > .container-div {
+    flex-wrap: wrap;
+    height: 100%;
+  }
+}
