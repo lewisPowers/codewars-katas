@@ -50,8 +50,29 @@ h1 {
   margin-left: 10px;
 }
 
+.gray {
+  margin-top: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 5px 10px;
+  background-color: rgba(5,5,255,.25);
+  height: 100%;
+  overflow: hidden;
+}
+
+.answer {
+  font-weight: 700;
+  line-height: 2.86em;
+}
+
+.green,
 .test-input {
   margin: 0;
+}
+
+.green {
+  padding: 10px;
+  background-color: rgba(5,255,5,.25);
 }
 
 .opening {
@@ -94,7 +115,7 @@ section.module {
   position: relative;
   overflow: visible;
   background-color: white;
-  max-width: 80%;
+  max-width: 90vw;
   margin: 20px;
   padding: 20px;
   border-radius: 5px;
@@ -106,7 +127,13 @@ section.module {
 }
 
 .test-input {
+  display: flex;
   min-width: max-content;
+}
+
+.example-input,
+.example-output {
+  margin: 1em 0;
 }
 
 .container-div {
@@ -148,7 +175,7 @@ section.module {
     overflow-x: hidden;
   }
   .module {
-    width: 92vw;
+    width: 92vw !important;
   }
   .test-input {
    width: 100%
