@@ -15,7 +15,6 @@ function solution(inputStr, markersArr) {
       }
       return false;
     }
-
   });
   return strArr.join('\n');
 };
