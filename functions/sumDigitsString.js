@@ -9,6 +9,7 @@ function sum(digits) {
   return digitsArr.join(' + ').concat(' = ', sum)
 }
 
+sum.changeMargin = '0';
 sum.newName = 'Sum of Digits';
 sum.kyu = 7;
 sum.link = '';
