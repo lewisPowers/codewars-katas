@@ -9,7 +9,7 @@ function printerError(s) {
   return `${errors}/${s.length}`;
 }
 
-printerError
+printerError.changeMargin = '0';
 printerError.inputWidth = 20
 printerError.link = 'https://www.codewars.com/kata/56541980fa08ab47a0000040';
 printerError.kyu = 7;
