@@ -78,7 +78,8 @@ let sourcesArr = [
   '/formMinValue.js',
   '/parseIntFromString.js',
   '/sumDigitsString.js',
-  '/stripComments.js'
+  '/stripComments.js',
+  '/population.js'
 ];
 
 let parentPath = '/functions'
