@@ -80,7 +80,8 @@ let sourcesArr = [
   'sumDigitsString.js',
   'stripComments.js',
   'population.js',
-  'twotoOne.js'
+  'twotoOne.js',
+  'grasshopper.js'
 ];
 
 let parentPath = '/functions/'
