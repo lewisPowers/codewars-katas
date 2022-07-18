@@ -81,7 +81,8 @@ let sourcesArr = [
   'stripComments.js',
   'population.js',
   'twotoOne.js',
-  'grasshopper.js'
+  'grasshopper.js',
+  'newFactorial.js'
 ];
 
 let parentPath = '/functions/'
