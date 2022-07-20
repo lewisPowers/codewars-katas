@@ -4,6 +4,26 @@
   --bordercolor: black;
 }
 
+section.minimized div,
+section.minimized span {
+  display: none;
+}
+
+.minimize-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.minimize-btn::after {
+  content: 'X';
+}
+
+.minimize-btn:hover {
+  cursor: pointer;
+  color: rgba(179, 179, 179, 0.246);
+}
+
 body {
   margin: 0;
 }
