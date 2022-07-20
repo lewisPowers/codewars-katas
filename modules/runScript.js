@@ -83,7 +83,8 @@ let sourcesArr = [
   'twotoOne.js',
   'grasshopper.js',
   'newFactorial.js',
-  'sortTwisted.js'
+  'sortTwisted.js',
+  'findVowels.js'
 ];
 
 let parentPath = '/functions/'
