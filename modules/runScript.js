@@ -82,7 +82,8 @@ let sourcesArr = [
   'population.js',
   'twotoOne.js',
   'grasshopper.js',
-  'newFactorial.js'
+  'newFactorial.js',
+  'sortTwisted.js'
 ];
 
 let parentPath = '/functions/'
