@@ -2,11 +2,15 @@ import formatCode from '/modules/formatCode.js';
 import testCode from '/modules/testCodeModule.js';
 import infoTab from '/modules/funcInfo.js';
 import formatStrings from '/modules/formatStrings.js';
+import miniBtn from '/modules/minimize.js';
 
 export default function(fn, args) {
   let allArgsArr = getArgArr(arguments);
   let call = fn.apply(this, allArgsArr);
   let box = createEl('box', fn);
+  let minBtn = miniBtn();
+  let minDiv = createEl('div');
+  minDiv.append(minBtn)
   let heading = createEl('h2');
   let exampleDiv = createEl('div', 'gray');
   let testDiv = createEl('div', 'green');
@@ -28,7 +32,7 @@ export default function(fn, args) {
   infoTab(box, info, link, rank, spacing);
   exampleDiv.append(exampleInput, exampleOutput);
   testDiv.append(testCode(fn, allArgsArr, box.id));
-  box.append(heading, code, exampleDiv, testDiv, testOutput);
+  box.append(heading, code, exampleDiv, testDiv, testOutput, minDiv);
   let container = isNaN(rank) ? document.getElementById('unknown-rank') :
     rank > 6 ? document.getElementById('white-rank') :
     rank > 4 ? document.getElementById('yellow-rank') :
@@ -67,7 +71,7 @@ function createEl(tagOrClass, classesOrXtra) {
   function buildBox(fn) {
     let box = document.createElement('section');
     box.id = uuid();
-    box.classList.add(box.id, 'module');
+    box.classList.add(box.id, 'module', 'minimized');
     box.fn = fn;
     return box;
   }
