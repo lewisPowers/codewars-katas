@@ -1,6 +1,13 @@
 export default function() {
   document.body.addEventListener('click',  function(e) {
-    if (!e.target.classList.contains('info-btn') &&
+    // console.log(e.target.nodeName)
+    if (e.target.nodeName === "SECTION" ||
+      (e.target.nodeName === "H2" && e.target.parentElement.nodeName === 'SECTION') ) {
+      let target = e.target.nodeName === "SECTION" ? e.target : e.target.parentElement;
+      if (target.classList.contains('minimized')) {
+        target.classList.replace('minimized', 'expanded');
+      }
+    } else if (!e.target.classList.contains('info-btn') &&
       !e.target.classList.contains('info-tab') &&
       e.target.tagName !== 'P' ) {
       let infoTabs = Array.from(document.getElementsByClassName('info-tab'));
