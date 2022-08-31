@@ -2,6 +2,7 @@
   box-sizing: border-box;
   font-family: 'Kdam Thmor Pro';
   --bordercolor: black;
+  --animationduration: 800;
 }
 
 body {
@@ -23,25 +24,30 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  text-align: center;
+}
+
 section.module {
   position: relative;
   overflow: visible;
   background-color: white;
-  transition: background-color 500ms, transform 500ms;
+  transition: background-color 500ms;
+  animation-duration: 500ms;
+  animation-name: smoothscaleup;
   max-width: 90vw;
-  margin: 20px;
+  margin: 25px;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 2px 4px 15px #999;
 }
 
 section.minimized {
-  /* transform: scale(1.05);
-  transition: transform 250ms; */
+  min-width: 400px;
   animation-duration: 500ms;
   animation-name: smoothscale;
-  padding: 150px !important;
-  margin: 100px 50px !important;
+  padding: 150px 50px !important;
+  margin: 100px 35px !important;
 }
 
 section.minimized div,
@@ -52,8 +58,12 @@ section.minimized span {
 section.minimized:hover {
   cursor: pointer;
   background-color: rgba(115, 115, 115, 0.192);
-  transform: translateY(-12%);
-  transition: background-color 500ms, transform 250ms;
+  transform: translateY(-7%);
+  transition: background-color 500ms, transform 1s;
+}
+
+section.minimized:not(:hover) {
+  transition: background-color 500ms, transform 1s;
 }
 
 .minimize-btn {
@@ -75,7 +85,16 @@ section.minimized:hover {
 
 @keyframes smoothscale {
   from {
-    transform: scale(1.2);
+    transform: scale(1.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes smoothscaleup {
+  from {
+    transform: scale(0.7);
   }
   to {
     transform: scale(1);
@@ -83,7 +102,7 @@ section.minimized:hover {
 }
 
 .transitioning {
-  animation-duration: 500ms;
+  animation-duration: 800ms;
   animation-name: smoothscale;
 }
 
@@ -223,6 +242,12 @@ section.minimized:hover {
   text-align: center;
 }
 
+@media only screen and (max-width: 940px) {
+  section.minimized {
+    margin-top: 15px !important;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   body {
     overflow-x: hidden;
@@ -230,6 +255,9 @@ section.minimized:hover {
   .module {
     width: 92vw !important;
   }
+  section.minimized {
+  margin: 20px 35px !important;
+}
   .test-input {
    width: 100%
   }
