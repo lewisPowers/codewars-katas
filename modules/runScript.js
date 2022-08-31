@@ -79,12 +79,14 @@ let sourcesArr = [
   'parseIntFromString.js',
   'sumDigitsString.js',
   'stripComments.js',
+  'roundToNext5.js',
   'population.js',
   'twotoOne.js',
   'grasshopper.js',
   'newFactorial.js',
   'sortTwisted.js',
-  'findVowels.js'
+  'findVowels.js',
+  'maxProduct.js'
 ];
 
 let parentPath = '/functions/'
