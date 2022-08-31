@@ -23,11 +23,25 @@ h1 {
   text-align: center;
 }
 
+section.module {
+  position: relative;
+  overflow: visible;
+  background-color: white;
+  transition: background-color 500ms, transform 500ms;
+  max-width: 90vw;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 15px #999;
+}
+
 section.minimized {
-  transform: scale(1.05);
-  transition: transform 250ms;
-  padding: 40px !important;
-  margin: 40px !important;
+  /* transform: scale(1.05);
+  transition: transform 250ms; */
+  animation-duration: 500ms;
+  animation-name: smoothscale;
+  padding: 150px !important;
+  margin: 100px 50px !important;
 }
 
 section.minimized div,
@@ -57,6 +71,20 @@ section.minimized:hover {
   cursor: pointer;
   color: rgba(147, 147, 147, 0.419);
   transition: color 300ms;
+}
+
+@keyframes smoothscale {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.transitioning {
+  animation-duration: 500ms;
+  animation-name: smoothscale;
 }
 
 .heading {
@@ -145,18 +173,6 @@ section.minimized:hover {
 
 .heading.white > h2 {
   -webkit-text-fill-color:white;
-}
-
-section.module {
-  position: relative;
-  overflow: visible;
-  background-color: white;
-  transition: background-color 500ms, transform 250ms;
-  max-width: 90vw;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 2px 4px 15px #999;
 }
 
 .module.darken {
