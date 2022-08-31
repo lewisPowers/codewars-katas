@@ -4,26 +4,6 @@
   --bordercolor: black;
 }
 
-section.minimized div,
-section.minimized span {
-  display: none;
-}
-
-.minimize-btn {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-}
-
-.minimize-btn::after {
-  content: 'X';
-}
-
-.minimize-btn:hover {
-  cursor: pointer;
-  color: rgba(179, 179, 179, 0.246);
-}
-
 body {
   margin: 0;
 }
@@ -41,6 +21,42 @@ h1 {
   display: block;
   width: 100vw;
   text-align: center;
+}
+
+section.minimized {
+  transform: scale(1.05);
+  transition: transform 250ms;
+  padding: 40px !important;
+  margin: 40px !important;
+}
+
+section.minimized div,
+section.minimized span {
+  display: none;
+}
+
+section.minimized:hover {
+  cursor: pointer;
+  background-color: rgba(115, 115, 115, 0.192);
+  transform: translateY(-12%);
+  transition: background-color 500ms, transform 250ms;
+}
+
+.minimize-btn {
+  position: absolute;
+  top: 20.5px;
+  right: 40px;
+  transition: color 300ms;
+}
+
+.minimize-btn::after {
+  content: 'X';
+}
+
+.minimize-btn:hover {
+  cursor: pointer;
+  color: rgba(147, 147, 147, 0.419);
+  transition: color 300ms;
 }
 
 .heading {
@@ -135,6 +151,7 @@ section.module {
   position: relative;
   overflow: visible;
   background-color: white;
+  transition: background-color 500ms, transform 250ms;
   max-width: 90vw;
   margin: 20px;
   padding: 20px;
