@@ -86,7 +86,8 @@ let sourcesArr = [
   'newFactorial.js',
   'sortTwisted.js',
   'findVowels.js',
-  'maxProduct.js'
+  'maxProduct.js',
+  'consecutiveStrings.js'
 ];
 
 let parentPath = '/functions/'
