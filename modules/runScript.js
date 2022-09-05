@@ -89,7 +89,8 @@ let sourcesArr = [
   'maxProduct',
   'consecutiveStrings',
   'positionInAlphabet',
-  'landPerimeter'
+  'landPerimeter',
+  'partList'
 ];
 
 const parentPath = '/functions/';
