@@ -5,7 +5,9 @@ export default function() {
       (e.target.nodeName === "H2" && e.target.parentElement.nodeName === 'SECTION') ) {
       let target = e.target.nodeName === "SECTION" ? e.target : e.target.parentElement;
       if (target.classList.contains('minimized')) {
-        target.classList.replace('minimized', 'expanded');
+        console.log(e)
+        e.target.classList.replace('minimized', 'expanded');
+        e.target.scrollIntoView( { behavior: 'smooth', block: 'center' } )
       }
     } else if (!e.target.classList.contains('info-btn') &&
       !e.target.classList.contains('info-tab') &&
