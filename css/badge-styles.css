@@ -1,5 +1,5 @@
 .is-blue-rank {
-  --bordercolor: rgb(31,126,215);
+  --bordercolor: rgb(31,126,215) white;
 }
 
 .is-yellow-rank {
