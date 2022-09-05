@@ -11,12 +11,12 @@ function landPerimeter(arr) {
 
   })
   return `Total land perimeter: ${perimeter}`
-  function addToPerimeter(landRow,rowIdx, position, totalPerimeter) {
+  function addToPerimeter(landRow, rowIdx, position, totalPerimeter) {
     let basePerimeter = 4;
     if (arr[rowIdx - 1] !== undefined && arr[rowIdx - 1][position] === 'X') basePerimeter--;
     if (arr[rowIdx + 1] !== undefined && arr[rowIdx + 1][position] === 'X') basePerimeter--;
     if (position - 1 >= 0 && arr[rowIdx][position - 1] === 'X') basePerimeter--;
-    if (position + 1 < arr.length && arr[rowIdx][position + 1] === 'X') basePerimeter--;
+    if (position + 1 < arr[rowIdx].length && arr[rowIdx][position + 1] === 'X') basePerimeter--;
     return basePerimeter;
   }
 }
