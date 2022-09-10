@@ -90,7 +90,8 @@ let sourcesArr = [
   'consecutiveStrings',
   'positionInAlphabet',
   'landPerimeter',
-  'partList'
+  'partList',
+  'sayHello'
 ];
 
 const parentPath = '/functions/';
