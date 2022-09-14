@@ -3,7 +3,7 @@ export default function() {
     if (e.target.nodeName === "SECTION" ||
       (e.target.nodeName === "H2" && e.target.parentElement.nodeName === 'SECTION') ) {
       let target = e.target.nodeName === "SECTION" ? e.target : e.target.parentElement;
-      if (e.target.classList.contains('minimized')) {
+      if (target.classList.contains('minimized')) {
         e.target.classList.replace('minimized', 'expanded');
         e.target.scrollIntoView( { behavior: 'smooth', block: 'center' } )
       }
