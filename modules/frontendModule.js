@@ -52,9 +52,9 @@ function uuid() {
 }
 
 function getArgArr(arrLike) {
-  let allArgsArr = Array.from(arrLike);
-  allArgsArr.shift();
-  return allArgsArr;
+  let argsArr = Array.from(arrLike);
+  argsArr.shift();
+  return argsArr;
 }
 
 function createEl(tagOrClass, classesOrXtra) {

@@ -1,11 +1,9 @@
 export default function() {
   document.body.addEventListener('click',  function(e) {
-    // console.log(e.target.nodeName)
     if (e.target.nodeName === "SECTION" ||
       (e.target.nodeName === "H2" && e.target.parentElement.nodeName === 'SECTION') ) {
       let target = e.target.nodeName === "SECTION" ? e.target : e.target.parentElement;
-      if (target.classList.contains('minimized')) {
-        console.log(e)
+      if (e.target.classList.contains('minimized')) {
         e.target.classList.replace('minimized', 'expanded');
         e.target.scrollIntoView( { behavior: 'smooth', block: 'center' } )
       }
