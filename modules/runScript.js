@@ -91,7 +91,10 @@ let sourcesArr = [
   'positionInAlphabet',
   'landPerimeter',
   'partList',
-  'sayHello'
+  'sayHello',
+  'commonDenom',
+  'reverseList',
+  'buyACar'
 ];
 
 const parentPath = '/functions/';
