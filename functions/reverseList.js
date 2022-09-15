@@ -1,7 +1,7 @@
 import frontend from '/modules/frontendModule.js';
 
 function reverseList(list) {
-  return list.slice().reverse();
+  return list.reverse();
 }
 
 reverseList.newName = 'Reverse List Order';
