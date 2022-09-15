@@ -4,6 +4,9 @@ export default function() {
       (e.target.nodeName === "H2" && e.target.parentElement.nodeName === 'SECTION') ) {
       let target = e.target.nodeName === "SECTION" ? e.target : e.target.parentElement;
       if (target.classList.contains('minimized')) {
+        if (e.target.querySelector('.console-message') != undefined) {
+          e.target.querySelector('.console-message').classList.remove('hidden');
+        }
         e.target.classList.replace('minimized', 'expanded');
         e.target.scrollIntoView( { behavior: 'smooth', block: 'center' } )
       }
