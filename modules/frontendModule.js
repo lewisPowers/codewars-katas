@@ -6,6 +6,7 @@ import miniBtn from '/modules/minimize.js';
 
 export default function(fn, args) {
   let allArgsArr = getArgArr(arguments);
+  let argsStr = mapArgs(allArgsArr);
   let call = fn.apply(this, allArgsArr);
   let box = createEl('box', fn);
   let minBtn = miniBtn();
@@ -24,7 +25,7 @@ export default function(fn, args) {
   let spacing = fn.changeMargin ? Number(fn.changeMargin) : undefined;
 
   heading.textContent = `${fn.newName || fn.name}`;
-  let argsStr = mapArgs(allArgsArr);
+
   exampleInput.textContent = `Example Input: ${argsStr}`;
   exampleOutput.textContent = `Example Output: ${formatStrings(call)}`;
   testOutput.textContent = `Test Output: `;
@@ -57,6 +58,12 @@ function getArgArr(arrLike) {
   return argsArr;
 }
 
+function mapArgs(array) {
+  return array.map( (el) => {
+    return ` ${formatStrings(el)}`;
+  })
+}
+
 function createEl(tagOrClass, classesOrXtra) {
   if (tagOrClass === 'box') return buildBox(classesOrXtra);
   let $el = document.createElement(tagOrClass);
@@ -75,10 +82,4 @@ function createEl(tagOrClass, classesOrXtra) {
     box.fn = fn;
     return box;
   }
-}
-
-function mapArgs(array) {
-  return array.map( (el) => {
-    return ` ${formatStrings(el)}`;
-  })
 }
