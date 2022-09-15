@@ -39,8 +39,11 @@ export default function(fn, argsArr, targetId) {
     let key = fn.toString();
     fn[key] = fn.apply(this, args);
     let children = moduleClicked.children;
-    let span = children[children.length - 1];
-    if (span.tagName !== 'SPAN') span = children[children.length - 2];
+    let span = getSpanEl(children.length - 1);
+    // if (span.tagName !== 'SPAN' && span.classList.contains('answer-green')) {
+    //   span = children[children.length - 2];
+    //   console.log(span);
+    // };
     span.textContent = `Test Output: ${formatStrings(fn[key])}`;
     if (fn.log) {
       if (!fn.logged) {
@@ -50,6 +53,12 @@ export default function(fn, argsArr, targetId) {
         moduleClicked.append(consoleMessageEl);
       }
       console.log(fn[key]);
+    }
+    function getSpanEl(childIdx) {
+      if (children[childIdx].tagName === 'SPAN'
+      && children[childIdx].tagName !== 'DIV') return children[childIdx];
+      if (childIdx >= 0) return getSpanEl(childIdx - 1)
+      return null;
     }
   }
 
