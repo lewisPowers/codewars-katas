@@ -44,9 +44,8 @@ section.module {
 }
 
 section.minimized {
-  /* min-width: 400px; */
   animation-duration: 500ms;
-  animation-name: smoothscale;
+  animation-name: smoothscaledn;
   padding: 150px 50px;
   margin: 55px 35px;
 }
@@ -84,7 +83,7 @@ section.minimized:not(:hover) {
   transition: color 300ms;
 }
 
-@keyframes smoothscale {
+@keyframes smoothscaledn {
   from {
     transform: scale(1.3);
   }
@@ -104,7 +103,7 @@ section.minimized:not(:hover) {
 
 .transitioning {
   animation-duration: 800ms;
-  animation-name: smoothscale;
+  animation-name: smoothscaledn;
 }
 
 .heading {
@@ -176,7 +175,7 @@ section.minimized:not(:hover) {
 }
 
 .rank-div.white {
-  background-color: rgba(170, 170, 170, 0.369);
+  background-color: rgba(137, 137, 137, 0.369);
 }
 
 .heading.purple > h2 {
@@ -253,12 +252,9 @@ section.minimized:not(:hover) {
   body {
     overflow-x: hidden;
   }
-  .module {
-    width: 92vw !important;
-  }
   section.minimized {
-  margin: 20px 35px !important;
-}
+    margin: 20px 35px !important;
+  }
   .test-input {
    width: 100%
   }
