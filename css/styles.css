@@ -43,11 +43,11 @@ section.module {
 }
 
 section.minimized {
-  min-width: 400px;
+  /* min-width: 400px; */
   animation-duration: 500ms;
   animation-name: smoothscale;
-  padding: 150px 50px !important;
-  margin: 100px 35px !important;
+  padding: 150px 50px;
+  margin: 55px 35px;
 }
 
 section.minimized div,
