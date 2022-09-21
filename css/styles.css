@@ -32,7 +32,7 @@ h2 {
 section.module {
   position: relative;
   overflow: visible;
-  background-color: rgba(115, 115, 115, 0.192);
+  background-color: rgba(247, 247, 247, 0.192);
   transition: background-color 500ms;
   animation-duration: 500ms;
   animation-name: smoothscaleup;
@@ -41,6 +41,14 @@ section.module {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 2px 4px 15px #999;
+}
+
+section.module.expanded {
+  background-color: rgba(255, 255, 255, 0.936);
+}
+
+.module.expanded.darken {
+  background-color: rgba(115, 115, 115, 0.192);
 }
 
 section.minimized {
@@ -192,10 +200,6 @@ section.minimized:not(:hover) {
 
 .heading.white > h2 {
   -webkit-text-fill-color:white;
-}
-
-.module.darken {
-  background-color: rgba(115, 115, 115, 0.192);
 }
 
 .test-input {

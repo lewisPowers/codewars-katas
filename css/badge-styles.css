@@ -1,5 +1,5 @@
 .is-blue-rank {
-  --bordercolor: rgb(31,126,215) white;
+  --bordercolor: rgb(80, 80, 255);
 }
 
 .is-yellow-rank {
@@ -7,7 +7,7 @@
 }
 
 .is-white-rank {
-  --bordercolor: black;
+  --bordercolor: rgb(45, 45, 45);
 }
 
 .small-hex {
