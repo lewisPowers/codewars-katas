@@ -94,7 +94,9 @@ let sourcesArr = [
   'sayHello',
   'commonDenom',
   'reverseList',
-  'buyACar'
+  'buyACar',
+  'simpleCalculator',
+  'largestPair'
 ];
 
 const parentPath = '/functions/';
