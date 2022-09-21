@@ -11,10 +11,10 @@ export default function formatCode(fnString) {
       if (fnString[i] === '`') {
         formatCode['`'] === undefined ? formatCode['`'] = 1 : formatCode['`']++;
         line += fnString[i];
-      } else if (!formatCode['`'] || formatCode['`'] % 2 === 0) {
+      } else if (isInBackTickQuotes()) {
         if ( fnString[i] === '}' && ( fnString[i + 1] === ')' ||  // for '})'
         ( fnString[i + 1] === ')' && line.length > 4 ) ||
-        (fnString[i + 1] === ';' || fnString[i + 1] === "'") || // & '};'  & '}''
+        (areSymbolsAfterObject(i)) || // & '};'  & '}''
         (fnString[i + 1] === "," || fnString[i + 2] === "e") ) || // & "}," & "} else"
           (fnString[i] === ';' && fnString[i + 1] === "'") || // for ; as string
           (fnString[i] === ';' && fnString[i + 2] === "i") || // in for loop definitions
@@ -46,6 +46,16 @@ export default function formatCode(fnString) {
   }
 
   return mainContainer;
+
+  function isInBackTickQuotes() {
+    return !formatCode['`'] || formatCode['`'] % 2 === 0;
+  }
+
+  function areSymbolsAfterObject(index) {
+    return fnString[index + 1] === ';' || fnString[index + 1] === "'";
+  }
+
+
 
   function newLine(char, substr) {
     let newPElement;
