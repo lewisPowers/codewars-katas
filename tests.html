@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="/modules/simpleTest.js"></script>
+
+    <script>
+
+        function hi() {
+          console.log('hi')
+          return 'hi';
+        }
+
+
+      function join(array, separator) {
+        var joinedString = '';
+
+        // if (!Array.isArray(array)) {
+        //   array = Object.values(obj);
+
+
+        // }
+
+        if (arguments.length === 1) {
+            separator = ',';
+        }
+
+        if (arguments.length > 1) {
+            var separatorArg = arguments[1];
+
+            if ( typeof separatorArg === 'string') {
+                separatorArg = separator;
+            } else {
+                separator = separatorArg.toString();
+            }
+        }
+
+        for (var i = 0; i < array.length; i++) {
+
+            if (typeof array[i] === 'undefined' || array[i] === null) {
+                array[i] = '';
+            }
+            var stringElement = array[i].toString()
+
+            if (i < array.length - 1) {
+                joinedString = joinedString + stringElement + separator;
+            } else {
+                joinedString = joinedString + stringElement;
+            }
+
+        }
+
+        return joinedString;
+      }
+
+      tests({
+
+        "Hi() should return the string 'hi'.": () => {
+          let test = hi();
+          eq(test, 'hi')
+        },
+
+        'It should accept each element in an array': function() {
+          var testArray = [1, true, 'three'];
+          var joinedString = join(testArray);
+          eq(joinedString, '1,true,three');
+        },
+
+        'It should accept each element in an array-like object': function() {
+          function args() {
+              var result = join(arguments, '');
+              return result;
+          }
+          eq(args('h', 'e', 'l', 'l', 'o'), 'hello');
+        },
+
+        'It should take a separator as an optional second argument': function() {
+          var testArray = [1, true, 'three'];
+          var joinedString = join(testArray, 1);
+          eq(joinedString, '11true1three');
+        },
+
+        'It should concatenate all elements into one string': function() {
+          var testArray = [1, true, 'three'];
+          var joinedString = join(testArray);
+          eq(joinedString, '1,true,three');
+        },
+
+        'It should return a string': function() {
+          var testArray = [1, true, 'three'];
+          var joinedString = join(testArray);
+          eq(typeof joinedString === 'string', true);
+        },
+
+        'It should return a single string': function() {
+          var testArray = [1, true, 'three', 'more'];
+          var joinedString = join(testArray);
+          eq(joinedString, '1,true,three,more');
+        },
+
+        'If array.length = 0, it should return an empty string': function() {
+          var emptyArray = [];
+          var emptyString = join(emptyArray);
+          eq(emptyString, '')
+        },
+
+        'If array.length = 0, and separator provided, it should return an empty string': function() {
+          var emptyArray = [];
+          var emptyString = join(emptyArray, ' and ');
+          eq(emptyString, '')
+        },
+
+        'If no separator is provided, the default should be a comma': function() {
+          var testArray = [1, true, 'three',,];
+          var joinedString = join(testArray);
+          eq(joinedString, '1,true,three,');
+        },
+
+        'It should put the provided separator between each array element': function() {
+          var testArray = [1, true, 'three'];
+          var joinedString = join(testArray, '-');
+          eq(joinedString, '1-true-three');
+        },
+
+        'If separator is an empty string, all elements should join without any characters in between them.': function() {
+            var testArray = [1, true, 'three'];
+            var joinedString = join(testArray, '');
+            eq(joinedString, '1truethree');
+        },
+
+        'If separator is not a string, it should convert into one.': function() {
+          var testArray = [1, true, 'three'];
+          var joinedString = join(testArray, false);
+          eq(joinedString, '1falsetruefalsethree');
+        },
+
+        'If array.length = 1, single item should be returned without using the separator.': function() {
+          var testArray = [1];
+          var joinedString = join(testArray, " next: ");
+          eq(joinedString, '1');
+        },
+
+        'If an element is undefined, null or an empty array [], it should be converted to an empty string.': function() {
+          var testArray = [1, true, 'three',,null,undefined,[], 8];
+          var joinedString = join(testArray);
+          eq(joinedString, '1,true,three,,,,,8');
+        },
+
+
+      });
+    </script>
+
+
+  </body>
+</html>
