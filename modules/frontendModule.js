@@ -7,7 +7,7 @@ import miniBtn from '/modules/minimize.js';
 export default function(fn, args) {
   let allArgsArr = getArgArr(arguments);
   let argsStr = mapArgs(allArgsArr);
-  let call = fn.apply(this, allArgsArr);
+  let call = fn.apply(this, allArgsArr.slice());
   let box = createEl('box', fn);
   let minBtn = miniBtn();
   let minDiv = createEl('div');
