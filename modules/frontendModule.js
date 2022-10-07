@@ -23,6 +23,7 @@ export default function(fn, args) {
   let link = fn.link;
   let rank = fn.kyu || '?';
   let spacing = fn.changeMargin ? Number(fn.changeMargin) : undefined;
+  // let spacing = fn.changeMargin ? fn.changeMargin : undefined;
 
   heading.textContent = `${fn.newName || fn.name}`;
 

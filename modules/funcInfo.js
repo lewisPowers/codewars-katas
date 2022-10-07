@@ -22,7 +22,7 @@ export default function(targetElement, funcInfo, linkStr, kyuRank, marginChange)
     tab.classList.toggle('hidden');
     if ( moduleClicked.margin !== undefined) {
       moduleClicked.style.overflow = 'visible';
-      infoTab.style.margin = 0;
+      infoTab.style.margin = `${marginChange}px`;
       infoBtn.classList.toggle('special-x');
     }
   })
