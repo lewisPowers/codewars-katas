@@ -99,7 +99,8 @@ let sourcesArr = [
   'largestPair',
   'powerOfTwo',
   'tipCalculator',
-  'priceMangoes'
+  'priceMangoes',
+  'consonantValue'
 ];
 
 const parentPath = '/functions/';
