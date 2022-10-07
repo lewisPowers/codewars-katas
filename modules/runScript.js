@@ -98,7 +98,8 @@ let sourcesArr = [
   'simpleCalculator',
   'largestPair',
   'powerOfTwo',
-  'tipCalculator'
+  'tipCalculator',
+  'priceMangoes'
 ];
 
 const parentPath = '/functions/';
