@@ -25,9 +25,3 @@ solve.kyu = 6;
 frontend(solve, 'zodiacs') // ===> 26
 
  // solve('strength') ==> 57
-
-
-
-
-
-
