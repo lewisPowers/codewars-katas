@@ -96,7 +96,8 @@ let sourcesArr = [
   'reverseList',
   'buyACar',
   'simpleCalculator',
-  'largestPair'
+  'largestPair',
+  'powerOfTwo'
 ];
 
 const parentPath = '/functions/';
