@@ -14,8 +14,3 @@ findDigit.link = 'https://www.codewars.com/kata/577b9960df78c19bca00007e';
 findDigit.info = `Complete the function that takes two numbers as input, num and nth and return the nth digit of num (counting from right to left).`;
 
 frontend(findDigit, 5673, 4) // ==> 5
-
-
-
-
-
