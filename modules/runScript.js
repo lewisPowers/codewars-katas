@@ -100,7 +100,8 @@ let sourcesArr = [
   'powerOfTwo',
   'tipCalculator',
   'priceMangoes',
-  'consonantValue'
+  'consonantValue',
+  'findNthDigit'
 ];
 
 const parentPath = '/functions/';
