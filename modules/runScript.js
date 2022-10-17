@@ -101,7 +101,8 @@ let sourcesArr = [
   'tipCalculator',
   'priceMangoes',
   'consonantValue',
-  'findNthDigit'
+  'findNthDigit',
+  'reverseStrings'
 ];
 
 const parentPath = '/functions/';
