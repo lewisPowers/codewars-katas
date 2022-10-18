@@ -102,7 +102,8 @@ let sourcesArr = [
   'priceMangoes',
   'consonantValue',
   'findNthDigit',
-  'reverseStrings'
+  'reverseStrings',
+  'numbersOfLetters'
 ];
 
 const parentPath = '/functions/';
