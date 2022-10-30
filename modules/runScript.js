@@ -106,7 +106,8 @@ let sourcesArr = [
   'numbersOfLetters',
   'findAverage',
   'twoDecimalPlaces',
-  'tribonacci'
+  'tribonacci',
+  'xbonacci'
 ];
 
 const parentPath = '/functions/';
