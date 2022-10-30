@@ -105,7 +105,8 @@ let sourcesArr = [
   'reverseStrings',
   'numbersOfLetters',
   'findAverage',
-  'twoDecimalPlaces'
+  'twoDecimalPlaces',
+  'tribonacci'
 ];
 
 const parentPath = '/functions/';
