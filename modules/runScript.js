@@ -103,7 +103,9 @@ let sourcesArr = [
   'consonantValue',
   'findNthDigit',
   'reverseStrings',
-  'numbersOfLetters'
+  'numbersOfLetters',
+  'findAverage',
+  'twoDecimalPlaces'
 ];
 
 const parentPath = '/functions/';
