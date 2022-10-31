@@ -108,7 +108,8 @@ let sourcesArr = [
   'twoDecimalPlaces',
   'tribonacci',
   'xbonacci',
-  'orderedCount'
+  'orderedCount',
+  'divideConquer'
 ];
 
 const parentPath = '/functions/';
