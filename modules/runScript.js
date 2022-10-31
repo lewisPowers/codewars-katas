@@ -107,7 +107,8 @@ let sourcesArr = [
   'findAverage',
   'twoDecimalPlaces',
   'tribonacci',
-  'xbonacci'
+  'xbonacci',
+  'orderedCount'
 ];
 
 const parentPath = '/functions/';
