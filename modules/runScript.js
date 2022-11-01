@@ -109,7 +109,11 @@ let sourcesArr = [
   'tribonacci',
   'xbonacci',
   'orderedCount',
-  'divideConquer'
+  'divideConquer',
+  'mathRound',
+  'mathCeil',
+  'mathFloor',
+  'validateCC'
 ];
 
 const parentPath = '/functions/';
