@@ -78,8 +78,9 @@ function createEl(tagOrClass, classesOrXtra) {
 
   function buildBox(fn) {
     let box = document.createElement('section');
-    box.id = uuid();
-    box.classList.add(box.id, 'module', 'minimized');
+    // box.id = uuid();
+    box.id = `fn-name-${fn.name}`;
+    box.classList.add(/*box.id, */'module', 'minimized');
     box.fn = fn;
     return box;
   }
