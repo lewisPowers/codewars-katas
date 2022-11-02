@@ -113,7 +113,9 @@ let sourcesArr = [
   'mathRound',
   'mathCeil',
   'mathFloor',
-  'validateCC'
+  'validateCC',
+  'rot13',
+  'productFib'
 ];
 
 const parentPath = '/functions/';
