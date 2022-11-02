@@ -115,7 +115,8 @@ let sourcesArr = [
   'mathFloor',
   'validateCC',
   'rot13',
-  'productFib'
+  'productFib',
+  'incrementString'
 ];
 
 const parentPath = '/functions/';
