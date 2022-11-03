@@ -117,7 +117,8 @@ let sourcesArr = [
   'rot13',
   'productFib',
   'incrementString',
-  'orderWeight'
+  'orderWeight',
+  'urlShortener'
 ];
 
 const parentPath = '/functions/';
