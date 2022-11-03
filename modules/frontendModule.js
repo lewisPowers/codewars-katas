@@ -33,7 +33,10 @@ export default function(fn, args) {
 
   infoTab(box, info, link, rank, spacing);
   exampleDiv.append(exampleInput, exampleOutput);
-  testDiv.append(testCode(fn, allArgsArr, box.id));
+  // testDiv.append(testCode(fn, allArgsArr, box.id));
+  let chosenArr = fn.originalExampleArgs != undefined ? [fn.originalExampleArgs] : allArgsArr;
+  testDiv.append(testCode(fn, chosenArr, box.id));
+
   box.append(heading, code, exampleDiv, testDiv, testOutput, minDiv);
   let container = isNaN(rank) ? document.getElementById('unknown-rank')
     : rank > 6 ? document.getElementById('white-rank')

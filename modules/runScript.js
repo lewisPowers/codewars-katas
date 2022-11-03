@@ -118,7 +118,8 @@ let sourcesArr = [
   'productFib',
   'incrementString',
   'orderWeight',
-  'urlShortener'
+  'urlShortener',
+  'snail'
 ];
 
 const parentPath = '/functions/';
