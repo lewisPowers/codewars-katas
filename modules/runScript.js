@@ -116,7 +116,8 @@ let sourcesArr = [
   'validateCC',
   'rot13',
   'productFib',
-  'incrementString'
+  'incrementString',
+  'orderWeight'
 ];
 
 const parentPath = '/functions/';
