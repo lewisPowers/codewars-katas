@@ -40,7 +40,8 @@ export default function() {
   filterDiv.style.top = '2.2em';
   filterDiv.style.left = '2.2em';
   span.textContent = 'Filter: ';
-  span.style.marginRight = '0.5em'
+  span.style.marginRight = '0.5em';
+  input.placeholder = 'name/rank/description';
 
   input.addEventListener('input', (e) => {
     e.target.style.opacity = '1';
