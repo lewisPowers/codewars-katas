@@ -4,7 +4,7 @@ function mathCeil(number) {
   let [int, dec] = number.toString().split('.').map(numStr => Number(numStr));
   if (dec > 0) int++;
   return int;
-};
+}
 
 mathCeil.newName = 'Math.ceil Issues';
 mathCeil.link = 'https://www.codewars.com/kata/5267faf57526ea542e0007fb';
