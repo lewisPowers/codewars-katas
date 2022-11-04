@@ -2,7 +2,7 @@
 
 ### Frontend modulator of custom-written 'kata' solutions from codewars.com using Javascript
 
-#### Live version at [lewispowers.com](https://lewispowers.com/project_codewars.html "Go to lewispowers.com")
+#### Live version at [lewispowers.com](https://lewispowers.com/project_codewars.html "Go to lewispowers.com"){:target="_blank"}
 
 <img width="800" alt="Codewars Katas ssat 1 39 03 PM" src="https://user-images.githubusercontent.com/52840741/178341735-987deebf-b43f-445d-aef8-2ebb9249a67c.png">
 
@@ -32,4 +32,4 @@
 
 ## ___Try it Yourself___
 
-Visit [my website](https://lewispowers.com/project_codewars.html "Go to lewispowers.com")
+Visit [my website](https://lewispowers.com/project_codewars.html "Go to lewispowers.com"){:target="_blank"}
