@@ -2,7 +2,7 @@
 
 ### Frontend modulator of custom-written 'kata' solutions from codewars.com using Javascript
 
-#### Live version at [lewispowers.com](https://lewispowers.com/project_codewars.html "Go to lewispowers.com")
+#### Try the live version at [lewispowers.com](https://lewispowers.com/project_codewars.html "Go to lewispowers.com")
 
 <!-- {:target="_blank"} -->
 
