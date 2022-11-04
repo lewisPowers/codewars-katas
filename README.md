@@ -34,4 +34,4 @@
 
 ## ___Try it Yourself___
 
-Visit [my website](https://lewispowers.com/project_codewars.html "Go to lewispowers.com"){:target="_blank"}
+Visit [lewispowers.com](https://lewispowers.com/project_codewars.html "Go to lewispowers.com")
